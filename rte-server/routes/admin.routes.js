@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const {createAdmin,loginAdmin, updateAdmin, deleteAdmin} = require('../controllers/admin.controller');
-//const auth = require('../middleware/authentication');
+
 
 
 router.post('/register',createAdmin)

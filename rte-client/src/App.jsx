@@ -1,13 +1,13 @@
 import React from "react";
+import Login from './components/login';
+import { Routes, Route } from 'react-router-dom';
 import "./App.css";
 
 function App() {
   return (
-    <div className="flex justify-center">
-      <h1 className="font-bold text-2xl text-blue-900">
-        React and Tailwind with Vitejs!
-      </h1>
-    </div>
+    <Routes>
+    <Route path="login" element={<Login />} />
+      </Routes>
   );
 }
 
