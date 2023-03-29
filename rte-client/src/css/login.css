@@ -1,7 +1,6 @@
-
+/* 
 
 section {
-    /* backgroundImage: "url(/background.jpeg)"; */
     margin: 0;
     position: absolute;
     top: 50%;
@@ -49,7 +48,7 @@ button {
 
 button {
   padding: 0.5rem;
-  background-color: yellow;
+ 
 }
 
 li {
@@ -125,4 +124,4 @@ li {
     height: 20px;
     width: 20px;
     margin: 0 5px 2px 2px;
-}
+} */
