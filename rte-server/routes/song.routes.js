@@ -14,3 +14,6 @@ router.get('/:id',getsongbyId)
 router.post('/',uploadNewsong)   
 router.patch('/:id',updateSong)
 router.delete('/:id', deleteSong)
+
+
+module.exports = router
