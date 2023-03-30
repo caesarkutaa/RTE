@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 const {createAdmin,loginAdmin, updateAdmin, deleteAdmin} = require('../controllers/admin.controller');
+const auth= require('../middleware/auth')
 
 
-
-router.post('/register',createAdmin)
+router.post('/register', createAdmin)
 router.post('/login', loginAdmin)
-router.put('/:id', updateAdmin)
-router.delete('/:id', deleteAdmin)
+router.put('/:id', auth,updateAdmin)
+router.delete('/:id', auth, deleteAdmin)
 
 
 

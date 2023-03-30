@@ -7,13 +7,13 @@ const { getAllsongs,
         updateSong,
         deleteSong } = require('../controllers/songs.controller')
 
+const auth  = require('../middleware/auth')
 
-
-router.get('/', getAllsongs)  
-router.get('/:id',getsongbyId)   
-router.post('/',uploadNewsong)   
-router.patch('/:id',updateSong)
-router.delete('/:id', deleteSong)
+router.get('/', auth,getAllsongs)  
+router.get('/:id',auth,getsongbyId)   
+router.post('/', auth,uploadNewsong)   
+router.patch('/:id',auth ,updateSong)
+router.delete('/:id',auth, deleteSong)
 
 
 module.exports = router
