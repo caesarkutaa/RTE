@@ -18,7 +18,7 @@ app.use(express.json())
 app.use(cors({
   origin: 'http://localhost:5173'
 }));
-
+ 
 
 
 //connect database
@@ -26,11 +26,14 @@ require('./DB/db').connect();
 
 //local dependencies
 const adminRouter = require('./routes/admin.routes');
+const songRouter = require('./routes/song.routes')
+const newRouter = require('./routes/news.routes')
 
 
 // routes
 app.use('/admin', adminRouter);
-
+app.use('/song', songRouter)
+app.use('/news' , newRouter)
 
 app.use(function(req, res) {
   res.status(404).send({url: req.originalUrl + ' not found'})
