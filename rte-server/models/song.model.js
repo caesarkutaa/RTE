@@ -7,6 +7,13 @@ const songSchema = new mongoose.Schema({
   artist: { type: String, 
             required: true 
         },
+   song:{
+   type:String,
+   required: true
+   },
+  songsvideo:{
+     type:String,
+  },
   genre: { type: String
         },
   year: { type: Number,
