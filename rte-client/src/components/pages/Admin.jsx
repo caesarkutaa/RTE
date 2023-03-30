@@ -1,5 +1,5 @@
 // import {React, useState} from 'react'
-import SideBar from '../partials/SideBar'
+import Dashboard from '../partials/Dashboard';
 import Login from '../login';
 
 const Admin = () => {
@@ -19,7 +19,7 @@ console.log(tokenString)
 
   return (
     <div>
-        <SideBar />
+        <Dashboard />
     </div>
   )
 }
