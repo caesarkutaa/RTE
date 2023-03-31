@@ -12,11 +12,10 @@ const newsSchema = new Schema({
               type:String,
               required:true
   },
-  date: { type: Date, 
-         required: true 
-    },
-  author: { type: String, 
-            required: true }
+  image:{
+    type:String
+  },
+
 },{ timestamps: true });
 
 module.exports = mongoose.model('News', newsSchema);
