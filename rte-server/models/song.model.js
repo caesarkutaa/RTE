@@ -9,10 +9,10 @@ artist:{
                 type: String, 
                 required: true 
         },
-song:{
-                 type:String,
-                required: true
-        },
+        audio:{
+                 public_id:String,
+                  url:String 
+              },
         
   songsvideo:{
                 type:String,

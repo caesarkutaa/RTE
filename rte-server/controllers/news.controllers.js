@@ -1,17 +1,47 @@
 const News = require('../models/news.model')
+const cloudinary = require('cloudinary').v2
+
+
+ 
+require('dotenv').config();
+
+  cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+  });
+
 
 //create news
 const createNews = async (req, res) => {
+
+  const imagePath = req.file.path;
+
  
   try {
-    const news =  await News.create({...req.body})
+    const result =await cloudinary.uploader.upload(imagePath,{
+      folder:"RTEblogImages"
+    })
+    console.log(result.secure_url)
+   console.log(result.public_id);
+
+    const news =  await News.create({
+      title:req.body.title,
+      description:req.body.description,
+      body:req.body.body,
+      image:{
+        public_id:result.public_id,
+        url:result.secure_url
+      }
+    })
     res.status(200).json(news);
   } catch (err) {
-    res.status(500).send(err);
+    res.status(500).json(err);
   }
  
 };
 
+//get a news by id
 const getNewsById = async (req, res) => {
   const getnewId = await News.findById(req.params.id)
   if(!getnewId ){
@@ -21,6 +51,8 @@ const getNewsById = async (req, res) => {
  }
 };
 
+
+//update a news
 const updateNewsById = async (req, res) => {
     const updatedNews = await News.findByIdAndUpdate(req.params.id,{$set:req.body},
         {new:true})
@@ -31,6 +63,8 @@ const updateNewsById = async (req, res) => {
         }
 };
 
+
+//delete a news
 const deleteNewsById = async (req, res) => {
     try {
         const deletedNews = await News.findByIdAndDelete(req.params.id)
@@ -41,7 +75,7 @@ const deleteNewsById = async (req, res) => {
      
 };
 
-
+//get all news
 const getAllNews = async (req, res) => {
     const Allnews = await News.find()
         if(!Allnews){
