@@ -1,8 +1,13 @@
-import React from 'react'
+import {React, useState} from 'react'
 import '../../App.css'
-import logo from '../../../public/logo.jpeg'
+import logo from '../../assets/logo.jpeg'
+import Songs from '../Songs';
+import Video from '../Video';
+import Blogs from '../Blogs';
 
-const SideBar = () => {
+const Dashboard = () => {
+  const [active, setActive] = useState('songs')
+
   return (
    <>
 <div className="bg-slate-200 flex ">
@@ -25,7 +30,9 @@ const SideBar = () => {
       </div>
       <ul className="mt-8 space-y-3 md:mt-20">
         <li className="relative">
-          <button className="focus:bg-slate-600 hover:bg-slate-600 flex w-full space-x-2 rounded-md px-10 py-4 text-gray-300 focus:outline-none">
+          <button
+            onClick={() => setActive('songs')}
+           className="focus:bg-slate-600 hover:bg-slate-600 flex w-full space-x-2 rounded-md px-10 py-4 text-gray-300 focus:outline-none">
             <span
               ><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg></span
@@ -33,7 +40,9 @@ const SideBar = () => {
           </button>
         </li>
         <li className="relative">
-          <button className="focus:bg-gray-600 hover:bg-slate-600 flex w-full space-x-2 rounded-md px-10 py-4 font-semibold focus:outline-none">
+          <button
+          onClick={() => setActive('videos')}
+          className="focus:bg-gray-600 hover:bg-slate-600 flex w-full space-x-2 rounded-md px-10 py-4 font-semibold focus:outline-none">
             <span
               ><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
@@ -45,7 +54,9 @@ const SideBar = () => {
           </svg>
         </li>
         <li className="relative">
-          <button className="focus:bg-slate-600 hover:bg-slate-600 flex w-full space-x-2 rounded-md px-10 py-4 text-gray-300 focus:outline-none">
+          <button
+            onClick={() => setActive('blogs')}
+          className="focus:bg-slate-600 hover:bg-slate-600 flex w-full space-x-2 rounded-md px-10 py-4 text-gray-300 focus:outline-none">
             <span
               ><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg></span
@@ -59,7 +70,7 @@ const SideBar = () => {
                 <path fill="currentColor" d="M32 15h-1V9a1 1 0 0 0-1-1H6a1 1 0 0 1-1-.82v-.36A1 1 0 0 1 6 6h23.58a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3a3.08 3.08 0 0 0 0 .36v20.57A4.1 4.1 0 0 0 7.13 32H30a1 1 0 0 0 1-1v-6h1a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-3 15H7.13A2.11 2.11 0 0 1 5 27.93V9.88A3.11 3.11 0 0 0 6 10h23v5h-7a5 5 0 0 0 0 10h7Zm2-7h-9a3 3 0 0 1 0-6h9Z" className="clr-i-outline clr-i-outline-path-1" />
                 <circle cx="23.01" cy="20" r="1.5" fill="currentColor" className="clr-i-outline clr-i-outline-path-2" />
                 <path fill="none" d="M0 0h36v36H0z" /></svg></span
-            ><span className="">Log Out</span>
+            ><span className="">RTE Dashboard</span>
           </button>
         </li>
 
@@ -67,7 +78,9 @@ const SideBar = () => {
       </ul>
     </nav>
   </aside>
-
+    {active === 'songs' && <Songs />}
+    {active=='videos' && <Video />}
+    {active==='blogs' && <Blogs />}
 </div>
 
 
@@ -75,4 +88,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar
+export default Dashboard;
