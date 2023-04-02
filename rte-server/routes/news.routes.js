@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const multer = require('multer')
 
 const  { createNews,
          getNewsById,
@@ -10,9 +10,17 @@ const  { createNews,
 
 const auth = require('../middleware/auth')
 
+const Storage = multer.diskStorage({
+    destination: "image",
+    filename: (req, file, cb) => {
+        cb(null, file.originalname)
+    }
+    
+});
 
+const upload = multer({ storage: Storage })
 
-router.post('/', auth,createNews)
+router.post('/', auth,upload.single('image'),createNews)
 router.get('/',  auth,getAllNews);
 router.get('/:id', auth,getNewsById);
 router.patch('/:id',auth, updateNewsById);

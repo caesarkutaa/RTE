@@ -1,6 +1,8 @@
 const Song = require('../models/song.model')
+const cloudinary = require('cloudinary').v2
 
 
+//get all songs
 const getAllsongs = async(req,res)=>{
  
     Song.find()
@@ -13,6 +15,7 @@ const getAllsongs = async(req,res)=>{
 
 }
 
+//get a song by id
 const getsongbyId = async(req,res)=>{
     Song.findById(req.params.id)
     .then((song) => res.json(song))
@@ -20,15 +23,71 @@ const getsongbyId = async(req,res)=>{
 
 }
 
+
+//upload a song
 const uploadNewsong = async(req,res)=>{
-    
+    cloudinary.config({
+        cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+        api_key: process.env.CLOUDINARY_API_KEY,
+        api_secret: process.env.CLOUDINARY_API_SECRET,
+      });
+
+    try {
+        const result =await cloudinary.uploader.upload(req.file.path,{
+            resource_type:"raw",
+            folder:"RTEsongs"
+        })
+        console.log(result.secure_url)
+       console.log(result.public_id);
+
+
+        const song =  await Song.create({
+            songname:req.body.songname,
+            artist:req.body.artist,
+            audio:{
+                    public_id:result.public_id,
+                    url:result.secure_url
+            },
+            songsvideo:req.body.songsvideo
+        })
+        res.status(200).json(song);
+      } catch (err) {
+        res.status(500).send(err);
+      }
 }
 
+// update a song
 const updateSong = async(req,res)=>{
-    
+    const updatedsong = await Song.findByIdAndUpdate(req.params.id,{$set:req.body},
+        {new:true})
+        if(!updatedsong ){
+           return res.status(400).json({msg:'No song found'})
+        }else{
+         return res.status(200).json({updatedsong ,msg:'Song updated sucessfully'})
+        }
 }
+
+//delete a song
 const deleteSong = async(req,res)=>{
-    
+    try {
+        const deletedsong = await Song.findByIdAndDelete(req.params.id)
+        res.status(200).send({msg:'Song deleted successfully'});  
+      } catch (error) {
+        res.status(500).json(error)
+      }
+}
+
+
+//update only video
+const updatevideo = async(req,res)=>{
+    const { songsvideo } = req.body
+    try {
+        const updatevideomp4 = await Song.updateOne({_id:req.params.id},{songsvideo})
+        if (!songsvideo) return res.status(404).send({ error: 'Song not found' });
+        res.status(200).json({msg:'Added video successfuly'});
+    } catch (error) {
+        res.status(400).json('Error: ' + error);
+    }
 }
 
 
@@ -37,5 +96,6 @@ getAllsongs,
 getsongbyId,
 uploadNewsong,
 updateSong,
-deleteSong
+deleteSong,
+updatevideo ,
 }
