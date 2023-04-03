@@ -1,6 +1,8 @@
 const Song = require('../models/song.model')
 const cloudinary = require('cloudinary').v2
-
+const express = require('express');
+const app = express();
+const expressfileuploader = require('express-fileupload')
 
 //get all songs
 const getAllsongs = async(req,res)=>{
@@ -24,6 +26,12 @@ const getsongbyId = async(req,res)=>{
 }
 
 
+//use express file uploader
+app.use(expressfileuploader({
+    useTempFiles: true
+  }))
+  
+
 //upload a song
 const uploadNewsong = async(req,res)=>{
     cloudinary.config({
@@ -32,8 +40,9 @@ const uploadNewsong = async(req,res)=>{
         api_secret: process.env.CLOUDINARY_API_SECRET,
       });
 
+      let { audio } = req.files;
     try {
-        const result =await cloudinary.uploader.upload(req.file.path,{
+        const result =await cloudinary.uploader.upload(audio.tempFilePath,{
             resource_type:"raw",
             folder:"RTEsongs"
         })
@@ -53,6 +62,7 @@ const uploadNewsong = async(req,res)=>{
         res.status(200).json(song);
       } catch (err) {
         res.status(500).send(err);
+        console.log(err);
       }
 }
 

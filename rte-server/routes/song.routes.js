@@ -16,20 +16,20 @@ const { getAllsongs,
 const auth  = require('../middleware/auth')
 
 //cloudinary
-const storage = multer.diskStorage({
-  filename: function(req, file, callback) {
-    callback(null, Date.now() + file.originalname);
-  }
+// const storage = multer.diskStorage({
+//   filename: function(req, file, callback) {
+//     callback(null, Date.now() + file.originalname);
+//   }
     
-});
+// });
 
 
-  const upload = multer({ storage: storage });
+  // const upload = multer({ storage: storage });
 
 
 router.get('/', auth,getAllsongs)  
 router.get('/:id',auth,getsongbyId)   
-router.post('/', auth,upload.single('audio'),uploadNewsong)   
+router.post('/', auth,uploadNewsong)   
 router.patch('/:id',auth ,updateSong)
 router.patch('/addvideo/:id',auth , updatevideo)
 router.delete('/:id',auth, deleteSong)

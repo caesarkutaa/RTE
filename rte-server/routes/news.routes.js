@@ -10,17 +10,17 @@ const  { createNews,
 
 const auth = require('../middleware/auth')
 
-const Storage = multer.diskStorage({
-    destination: "image",
-    filename: (req, file, cb) => {
-        cb(null, file.originalname)
-    }
+// const Storage = multer.diskStorage({
+//     destination: "image",
+//     filename: (req, file, cb) => {
+//         cb(null, file.originalname)
+//     }
     
-});
+// });
 
-const upload = multer({ storage: Storage })
+// const upload = multer({ storage: Storage })
 
-router.post('/', auth,upload.single('image'),createNews)
+router.post('/', auth,createNews)
 router.get('/',  auth,getAllNews);
 router.get('/:id', auth,getNewsById);
 router.patch('/:id',auth, updateNewsById);
