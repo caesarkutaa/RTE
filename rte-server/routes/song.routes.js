@@ -22,10 +22,8 @@ const storage = multer.diskStorage({
   }
     
 });
-
-
   const upload = multer({ storage: storage });
-
+  
 
 router.get('/', auth,getAllsongs)  
 router.get('/:id',auth,getsongbyId)   
