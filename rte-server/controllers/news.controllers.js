@@ -1,7 +1,15 @@
 const News = require('../models/news.model')
 const cloudinary = require('cloudinary').v2
+const express = require('express');
+const app = express();
+const expressfileuploader = require('express-fileupload')
 
 
+
+//use express file uploader
+app.use(expressfileuploader({
+  useTempFiles: true
+}))
  
 require('dotenv').config();
 
@@ -15,11 +23,11 @@ require('dotenv').config();
 //create news
 const createNews = async (req, res) => {
 
-  const imagePath = req.file.path;
+  const {image} = req.files
 
  
   try {
-    const result =await cloudinary.uploader.upload(imagePath,{
+    const result =await cloudinary.uploader.upload(image.tempFilePath,{
       folder:"RTEblogImages"
     })
     console.log(result.secure_url)
