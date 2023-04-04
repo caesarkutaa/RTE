@@ -43,7 +43,7 @@ const uploadNewsong = async(req,res)=>{
       let { audio } = req.files;
     try {
         const result =await cloudinary.uploader.upload(audio.tempFilePath,{
-            resource_type:"raw",
+            resource_type:"auto",
             folder:"RTEsongs"
         })
         console.log(result.secure_url)
