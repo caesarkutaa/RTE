@@ -1,21 +1,27 @@
 // import {React, useState} from 'react'
 import Dashboard from '../partials/Dashboard';
 import Login from '../login';
+import Cookies from "universal-cookie"
+const cookies = new Cookies()
 
 const Admin = () => {
-
+  const token = cookies.get('Token')
   function setToken (){
-const tokenString = JSON.parse(localStorage.getItem('Token'))
+const token = cookies.get('Token')
+  }
 
-if(!tokenString) {
+  window.addEventListener("load", () => {
+    setToken()
+  console.log(token)
+  });
+
+console.log(cookies.get('Token'))
+if(!token) {
   return<Login  />
 }
-}
 
-window.addEventListener("load", () => {
-  setToken()
-console.log(tokenString)
-});
+
+
 
   return (
     <div>
