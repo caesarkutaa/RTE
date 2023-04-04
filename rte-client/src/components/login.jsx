@@ -1,10 +1,13 @@
 import { React, useRef, useState, useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import Cookies from "universal-cookie"
+import jwt_decode from "jwt-decode";
 import '../css/login.css'
 import axios from '../API/axios';
 const LOGIN_URL = '/admin/login';
 
+const cookies = new Cookies()
 const Login = () => {
     const { setAuth, persist, setPersist } = useAuth();
 
@@ -39,8 +42,13 @@ const Login = () => {
             );
             console.log(JSON.stringify(response?.data));            
             const Token = response?.data?.token;
+            var decoded = jwt_decode(Token);
             console.log(JSON.stringify(Token));
-            localStorage.setItem('token', JSON.stringify(Token));
+            cookies.set('Token', Token,{
+                expires: new Date(decoded.exp * 1000 ),
+                sameSite: 'none',
+                path: '/'
+            })
             setEmail('');
             setPassword('');
             navigate('/admin', { replace: true });
