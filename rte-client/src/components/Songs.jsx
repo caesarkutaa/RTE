@@ -1,37 +1,48 @@
 import { React, useState, useEffect } from "react";
 import axios from "../API/axios";
 const song_URL = '/song'
+import Cookies from "universal-cookie"
+const cookies = new Cookies()
 
 const Songs = () => {
+  const [success, setSuccess] = useState('')
   const [file, setFile] = useState();
-  const [songNane, setSongNane] = useState("");
+  const [songName, setSongNane] = useState("");
   const [songArtist, setSongArtist] = useState("");
   const [songVideo, setSongVideo] = useState("");
+  const [errMsg, setErrMsg] = useState('');
 
   // useEffect(() => {
 
   // }, [])
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDIyMWNkMjRhMTEyZWRkMGQ3NTNhMGQiLCJuYW1lIjoia3V0YSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDU1MzM0MywiZXhwIjoxNjgwNjM5NzQzfQ.JfSmTIqyrt92rmiVnL9WP3vcCNulRsiz6YgTnHlQ7EM"
+  const token = cookies.get('Token')
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const songname = songNane
-    const artist = songArtist
-    const songsvideo = songVideo
-    const audio = file
-    console.log('data', songname,artist, songsvideo, audio )
+    const data = new FormData()
+    data.append('songname', songName)
+    data.append('artist', songArtist)
+    data.append('songsvideo', songVideo)
+    data.append('audio', file)
+    console.log('data', data )
 
     try {
       const response = await axios.post(song_URL, 
-      JSON.stringify({songname,artist,songsvideo,audio}),
+      data,
       {
         headers: {
-           Authorization: `Bearer ${token}`
+           Authorization: `Bearer ${token}`,
+           "content-type": "multipart/form-data",
+           Accept: 'application/json', 
+           Accept: "application/octet-stream"
         }
       }  
       );
       console.log(JSON.stringify(response?.data))
+      setSuccess(`${JSON.stringify(response?.data.songname)} uploaded successfully`)
     } catch (error) {
       console.log(error);
+      setErrMsg('song not uploaded. try again ')
+
     }
   }
   function handleFile(event) {
@@ -46,12 +57,12 @@ const Songs = () => {
       </div>
       <form onSubmit={handleSubmit} className="space-y-4 px-8 py-10">
         <label className="block" for="name">
-          <p class="text-gray-600">Song Name</p>
+          <p className="text-gray-600">Song Name</p>
           <input
             className="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
             type="text"
             placeholder="Enter Song Name"
-            value={songNane}
+            value={songName}
             onChange={(e) => setSongNane(e.target.value)}
             required
           />
@@ -64,6 +75,7 @@ const Songs = () => {
             placeholder="Enter Artist Name"
             value={songArtist}
             onChange={(e) => setSongArtist(e.target.value)}
+            required
           />
         </label>
         <label className="block" for="name">
@@ -83,6 +95,7 @@ const Songs = () => {
             name="file"
             id=""
             onChange={handleFile}
+            required
           />
           browse
         </label>
@@ -90,6 +103,8 @@ const Songs = () => {
           Submit
         </button>
       </form>
+      <p className="text-gray-600 text-center">{success} </p>
+      <p className="text-gray-600 text-center">{errMsg} </p>
     </div>
   );
 };

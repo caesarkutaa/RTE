@@ -17,6 +17,18 @@ const getAllsongs = async(req,res)=>{
 
 }
 
+const searchForSong = async(req,res)=>{
+ 
+    Song.find({songname: req.body})
+    .then(song => (
+        res.status(200).json(song)
+    ))
+    .catch(err => {
+        res.status(404).json('Error: ' + err)
+    })
+
+}
+
 //get a song by id
 const getsongbyId = async(req,res)=>{
     Song.findById(req.params.id)
@@ -39,8 +51,10 @@ const uploadNewsong = async(req,res)=>{
         api_key: process.env.CLOUDINARY_API_KEY,
         api_secret: process.env.CLOUDINARY_API_SECRET,
       });
+      console.log(req.files)
 
       let { audio } = req.files;
+      console.log(audio)
     try {
         const result =await cloudinary.uploader.upload(audio.tempFilePath,{
             resource_type:"raw",
@@ -103,6 +117,7 @@ const updatevideo = async(req,res)=>{
 
 module.exports = {
 getAllsongs,
+searchForSong,
 getsongbyId,
 uploadNewsong,
 updateSong,
