@@ -28,8 +28,8 @@ const auth  = require('../middleware/auth')
   // const upload = multer({ storage: storage });
 
 
-});
-  const upload = multer({ storage: storage });
+
+  // const upload = multer({ storage: storage });
   
 
 
