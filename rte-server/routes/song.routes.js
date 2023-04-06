@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
 
 
 //controllers
 const { getAllsongs,
         getsongbyId,
+        searchForSong,
         uploadNewsong,
         updateSong,
         deleteSong,
@@ -28,12 +28,13 @@ const auth  = require('../middleware/auth')
   // const upload = multer({ storage: storage });
 
 
-
+});
   const upload = multer({ storage: storage });
   
 
 
-router.get('/', auth,getAllsongs)  
+router.get('/',getAllsongs)
+router.get('/search', searchForSong)    
 router.get('/:id',auth,getsongbyId)   
 router.post('/', auth,uploadNewsong)   
 router.patch('/:id',auth ,updateSong)
