@@ -39,6 +39,10 @@ const Songs = () => {
       );
       console.log(JSON.stringify(response?.data))
       setSuccess(`${JSON.stringify(response?.data.songname)} uploaded successfully`)
+      setSongNane("")
+      setSongArtist("")
+      setSongVideo("")
+      setFile()
     } catch (error) {
       console.log(error);
       setErrMsg('song not uploaded. try again ')
@@ -82,7 +86,7 @@ const Songs = () => {
           <p className="text-gray-600">Video</p>
           <input
             className="w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
-            type="email"
+            type="text"
             placeholder="Enter video link"
             value={songVideo}
             onChange={(e) => setSongVideo(e.target.value)}
@@ -103,8 +107,8 @@ const Songs = () => {
           Submit
         </button>
       </form>
-      <p className="text-gray-600 text-center">{success} </p>
-      <p className="text-gray-600 text-center">{errMsg} </p>
+      <p className="text-green-600 text-center">{success} </p>
+      <p className="text-red-600 text-center">{errMsg} </p>
     </div>
   );
 };
