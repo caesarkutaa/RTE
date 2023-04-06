@@ -21,10 +21,16 @@ const auth  = require('../middleware/auth')
 //     callback(null, Date.now() + file.originalname);
 //   }
     
+
 // });
 
 
   // const upload = multer({ storage: storage });
+
+
+});
+  const upload = multer({ storage: storage });
+  
 
 
 router.get('/', auth,getAllsongs)  
