@@ -19,9 +19,10 @@ const getAllsongs = async(req,res)=>{
 
 const searchForSong = async(req,res)=>{
  
-    Song.find({songname: req.body})
-    .then(song => (
-        res.status(200).json(song)
+    const {songname} = req.query
+    Song.find({songname})
+    .then(songs => (
+        res.status(200).json(songs)
     ))
     .catch(err => {
         res.status(404).json('Error: ' + err)
@@ -57,7 +58,7 @@ const uploadNewsong = async(req,res)=>{
       console.log(audio)
     try {
         const result =await cloudinary.uploader.upload(audio.tempFilePath,{
-            resource_type:"raw",
+            resource_type:"auto",
             folder:"RTEsongs"
         })
         console.log(result.secure_url)
