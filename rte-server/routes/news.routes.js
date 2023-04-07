@@ -11,8 +11,8 @@ const auth = require('../middleware/auth')
 
 
 router.post('/', auth,createNews)
-router.get('/',  auth,getAllNews);
-router.get('/:id', auth,getNewsById);
+router.get('/',getAllNews);
+router.get('/:id',getNewsById);
 router.patch('/:id',auth, updateNewsById);
 router.delete('/:id', auth,deleteNewsById);
 

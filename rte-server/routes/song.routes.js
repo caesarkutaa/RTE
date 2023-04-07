@@ -19,7 +19,7 @@ const auth  = require('../middleware/auth')
 
 router.get('/',getAllsongs)
 router.get('/search', searchForSong)    
-router.get('/:id',auth,getsongbyId)   
+router.get('/:id',getsongbyId)   
 router.post('/', auth,uploadNewsong)   
 router.patch('/:id',auth ,updateSong)
 router.patch('/addvideo/:id',auth , updatevideo)
