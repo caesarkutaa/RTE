@@ -6,14 +6,20 @@ const expressfileuploader = require('express-fileupload')
 
 //get all songs
 const getAllsongs = async(req,res)=>{
- 
-    Song.find()
-    .then(songs => (
-        res.status(200).json(songs)
-    ))
-    .catch(err => {
-        res.status(404).json('Error: ' + err)
-    })
+    const pageNumber = parseInt(req.query.pageNumber || '1');
+    const pageSize = parseInt(req.query.pageSize || '10');
+    const skip = (pageNumber - 1) * pageSize;
+
+try {
+ const songs = await Song.find()  .skip(skip) .limit(pageSize)  ;
+
+ res.status(200).json({songs,count:songs.length});  
+} catch (error) {
+    res.status(400).json('Error: ' + error);
+    console.log(error);
+}
+      
+    
 
 }
 
