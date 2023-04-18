@@ -60,10 +60,15 @@ const uploadNewsong = async(req,res)=>{
       });
       console.log(req.files)
 
-      let { audio } = req.files;
-      console.log(audio)
+     
+      let { image, audio } = req.files;
     try {
-        const result =await cloudinary.uploader.upload(audio.tempFilePath,{
+        const result =await cloudinary.uploader.upload(image.tempFilePath,{
+            folder:"RTEsongs"
+        })
+        console.log(result.secure_url)
+
+        const reponse =await cloudinary.uploader.upload(audio.tempFilePath,{
             resource_type:"auto",
             folder:"RTEsongs"
         })
@@ -74,10 +79,15 @@ const uploadNewsong = async(req,res)=>{
         const song =  await Song.create({
             songname:req.body.songname,
             artist:req.body.artist,
+            image:{
+                public_id:result.public_id,
+                url:result.secure_url
+        },
             audio:{
-                    public_id:result.public_id,
-                    url:result.secure_url
+                    public_id:reponse.public_id,
+                    url:reponse.secure_url
             },
+            desc:req.body.desc,
             songsvideo:req.body.songsvideo
         })
         res.status(200).json(song);
