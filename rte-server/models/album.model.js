@@ -1,29 +1,28 @@
-const mongoose = require('mongoose')
-const albumSchema = new mongoose.Schema({
-    title:{
-      type:String
+const mongoose = require("mongoose");
+const albumSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
     },
 
-    artist:{
-      type:String
+    artist: {
+      type: String,
     },
 
-    image:{
-        type:String,
-        url:String 
+    image: {
+      type: String,
+      url: String,
     },
-    releaseDate: Date,
 
-    tracklists:[{
-      title: String,
-      url:String,
-      
-}],
-    desc:{
-      type:String,
-      max:500
+    tracklists: {
+      type: [{ type: String, minlength: 3, maxlength: 255 }],
+    },
+    desc: {
+      type: String,
+      max: 500,
+    },
   },
-  
-  },{ timestamps:true });
-  
-  module.exports = mongoose.model('Album', albumSchema);
+  { timestamps: true }
+);
+
+module.exports = mongoose.model("Album", albumSchema);
