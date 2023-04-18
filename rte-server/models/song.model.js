@@ -5,13 +5,24 @@ songname:{
                 type:String,
                 required: true
         },
+desc:{
+                type:String,
+                required: true,
+                max:500
+        },
+image:{
+                public_id:String,
+                url:String ,
+               
+        },
 artist:{
                 type: String, 
                 required: true 
         },
-        audio:{
+audio:{
                  public_id:String,
-                  url:String 
+                  url:String,
+              
               },
         
   songsvideo:{
