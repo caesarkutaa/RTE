@@ -31,13 +31,14 @@ const adminRouter = require('./routes/admin.routes');
 const songRouter = require('./routes/song.routes')
 const newRouter = require('./routes/news.routes')
 const statsRouter = require('./routes/stats.routes')
+const albumRouter = require('./routes/album.routes')
 
 // routes
 app.use('/admin', adminRouter);
 app.use('/song', songRouter)
 app.use('/news' , newRouter)
 app.use('/stats' , statsRouter)
-
+app.use('/album' , albumRouter)
 
 app.use(function(req, res) {
   res.status(404).send({url: req.originalUrl + ' not found'})
