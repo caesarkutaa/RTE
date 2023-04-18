@@ -26,9 +26,10 @@ try {
 const searchForSong = async(req,res)=>{
  
     const {songname} = req.query
+    
     Song.find({songname})
-    .then(songs => (
-        res.status(200).json(songs)
+    .then(song => (
+        res.status(200).json({song})
     ))
     .catch(err => {
         res.status(404).json('Error: ' + err)
@@ -111,10 +112,11 @@ const deleteSong = async(req,res)=>{
 
 //update only video
 const updatevideo = async(req,res)=>{
-    const { songsvideo } = req.body
+    const { songVideo } = req.body
+
+    if (!songVideo) return res.status(404).send({ error: 'Song not found' });
     try {
-        const updatevideomp4 = await Song.updateOne({_id:req.params.id},{songsvideo})
-        if (!songsvideo) return res.status(404).send({ error: 'Song not found' });
+        const updatevideomp4 = await Song.updateOne({_id:req.params.id},{songsvideo: songVideo})
         res.status(200).json({msg:'Added video successfuly'});
     } catch (error) {
         res.status(400).json('Error: ' + error);
