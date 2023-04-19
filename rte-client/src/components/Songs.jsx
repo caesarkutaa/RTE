@@ -7,10 +7,13 @@ const cookies = new Cookies();
 const Songs = () => {
   const [success, setSuccess] = useState("");
   const [file, setFile] = useState();
+  const [coverArt, setCoverArt] = useState();
+  const [desc, setDesc] = useState("");
   const [songName, setSongNane] = useState("");
   const [songArtist, setSongArtist] = useState("");
   const [songVideo, setSongVideo] = useState("");
   const [errMsg, setErrMsg] = useState("");
+
 
   const token = cookies.get("Token");
   const handleSubmit = async (e) => {
@@ -20,7 +23,8 @@ const Songs = () => {
     data.append("artist", songArtist);
     data.append("songsvideo", songVideo);
     data.append("audio", file);
-    console.log("data", data);
+    data.append("image", coverArt)
+    data.append("desc", desc)
 
     try {
       const response = await axios.post(song_URL, data, {
@@ -31,7 +35,6 @@ const Songs = () => {
           Accept: "application/octet-stream",
         },
       });
-      console.log(JSON.stringify(response?.data));
       setSuccess(
         `${JSON.stringify(response?.data.songname)} uploaded successfully`
       );
@@ -40,12 +43,14 @@ const Songs = () => {
       setSongVideo("");
       setFile();
     } catch (error) {
-      console.log(error);
       setErrMsg("song not uploaded. try again ");
     }
   };
   function handleFile(event) {
     setFile(event.target.files[0]);
+  }
+  function handleCoverArt(event) {
+    setCoverArt(event.target.files[0]);
   }
   return (
     <div className="sm:w-[38rem] mx-auto my-10 overflow-hidden rounded-2xl bg-white shadow-lg sm:max-w-lg">
@@ -66,6 +71,27 @@ const Songs = () => {
             required
           />
         </label>
+        <label className="shadow-blue-100 mt-6 block rounded-full border bg-white px-4 py-4 font-normal text-blue-500 shadow hover:bg-blue-50">
+          <input
+            className=""
+            type="file"
+            name="coverArt"
+            id=""
+            onChange={handleCoverArt}
+            required
+          />
+          browse
+        </label>
+        <label className="block" for="name">
+            <p className="text-gray-600">Song Description</p>
+            <textarea
+              className="h-32 w-full rounded-md border bg-white px-2 py-2 outline-none ring-blue-600 focus:ring-1"
+              type="text"
+              placeholder="Enter the blog details or main body"
+              value={desc}
+              onChange={(e) => setDesc(e.target.value)}
+            ></textarea>
+          </label>
         <label className="block" for="name">
           <p className="text-gray-600">Song Artist</p>
           <input

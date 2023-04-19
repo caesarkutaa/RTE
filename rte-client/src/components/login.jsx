@@ -41,6 +41,9 @@ const Login = () => {
             );
             console.log(JSON.stringify(response?.data));            
             const Token = response?.data?.token;
+            cookies.set('Token', Token, {
+                path: '/'
+            })
             setAuth({email, password, Token})
             setEmail('');
             setPassword('');

@@ -10,6 +10,7 @@ const Blogs = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [body, setBody] = useState("");
+  const [errMsg, setErrMsg] = useState('');
 
   const token = cookies.get("Token");
 
@@ -32,9 +33,14 @@ const Blogs = () => {
           "content-type": "multipart/form-data",
         },
       });
-      console.log(JSON.stringify(response?.data));
+     
+      setBody('')
+      setTitle('')
+      setDescription('')
+      setFile()
+      setSuccess('blog uploaded successfully')
     } catch (error) {
-      console.log(error);
+      setErrMsg('Blog upload Failed, try again')
     }
   }
   return (
@@ -44,6 +50,8 @@ const Blogs = () => {
           Add News
         </p>
       </div>
+      <p className='text-center'  style={{color:"red"}}>{errMsg}</p>
+      <p className='text-center' style={{color:"green"}}>{success}</p>
       <form onSubmit={handleSubmit}>
         <div className="space-y-4 px-8 py-10">
           <label className="block" for="name">

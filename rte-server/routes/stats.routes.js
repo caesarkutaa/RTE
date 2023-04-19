@@ -18,7 +18,7 @@ router.get('/songs', auth, checkAdmin, async (req, res) => {
 
 router.get('/news', auth , checkAdmin ,async (req, res) => {
 
-    const news = await New.find()
+    const news = await News.find()
     res.status(200).json({news_count:news.length})
    })
   

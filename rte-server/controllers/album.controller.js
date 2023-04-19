@@ -99,6 +99,5 @@ module.exports = {
   getAlbumId,
   getAllalbum,
   updateAlbumById,
-  deleteAlbumById,
-  removeSong,
+  deleteAlbumById
 };
