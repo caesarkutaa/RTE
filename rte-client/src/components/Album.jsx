@@ -20,7 +20,7 @@ const Album = () => {
         const data = new FormData();
         data.append("title", title);
         data.append("artist", albumArtist);
-        // data.append("image", coverArt);
+        data.append("image", coverArt);
         for (let i = 0; i < tracklists.length; i++) {
             data.append('tracklists', tracklists[i])
           }
@@ -38,8 +38,11 @@ const Album = () => {
               setSuccess(
                 `${JSON.stringify(response?.data.title)} uploaded successfully`
               );
+              setAlbumArtist('')
+              setDesc('')
+              setTitle('')
         } catch (error) {
-            console.log(error)
+          setErrMsg("album not uploaded. try again ");
         }
       }
       function handleCoverArt(event) {
@@ -70,7 +73,7 @@ const Album = () => {
             required
           />
         </label>
-        {/* <label className="shadow-blue-100 mt-6 block rounded-full border bg-white px-4 py-4 font-normal text-blue-500 shadow hover:bg-blue-50">
+        <label className="shadow-blue-100 mt-6 block rounded-full border bg-white px-4 py-4 font-normal text-blue-500 shadow hover:bg-blue-50">
           <input
             className=""
             type="file"
@@ -81,7 +84,7 @@ const Album = () => {
             required
           />
           browse
-        </label> */}
+        </label>
         <label className="block" for="name">
             <p className="text-gray-600">Album Description</p>
             <textarea

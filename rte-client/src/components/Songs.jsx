@@ -52,6 +52,7 @@ const Songs = () => {
   function handleCoverArt(event) {
     setCoverArt(event.target.files[0]);
   }
+  
   return (
     <div className="sm:w-[38rem] mx-auto my-10 overflow-hidden rounded-2xl bg-white shadow-lg sm:max-w-lg">
       <div className="bg-blue-800 px-10 py-10 text-center text-white">
