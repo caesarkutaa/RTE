@@ -22,6 +22,7 @@ const createAlbum = async (req, res) => {
 
   const { tracklists } = req.files || req.files.tracklists;
 
+  console.log(req.files)
   try {
     const result = await Promise.all(
       tracklists.map((tracklist) => {

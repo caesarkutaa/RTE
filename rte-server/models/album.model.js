@@ -16,6 +16,7 @@ const albumSchema = new mongoose.Schema(
 
     tracklists: {
       type: [{ type: String, minlength: 3, maxlength: 255 }],
+      required:true
     },
     desc: {
       type: String,

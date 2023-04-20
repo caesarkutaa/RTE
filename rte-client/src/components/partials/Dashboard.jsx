@@ -5,6 +5,7 @@ import Songs from "../Songs";
 import Video from "../Video";
 import Blogs from "../Blogs";
 import Stats from "../Stats";
+import Album from "../Album";
 
 const Dashboard = () => {
   const [active, setActive] = useState("songs");
@@ -37,7 +38,7 @@ const Dashboard = () => {
             aria-label="Sidebar Navigation"
             className="peer-checked:w-64 left-0 z-10 flex h-screen w-0 flex-col overflow-hidden bg-gray-700 text-white transition-all md:h-screen md:w-64 lg:w-72"
           >
-            <div className="bg-slate-800 mt-5 py-4 pl-10 md:mt-10">
+            <div className="bg-slate-800 mt-5 py-4 pl-15 md:mt-15">
               <span className="">
                 <span className="mr-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 align-bottom text-2xl font-bold">
                   <img src={logo} alt="" srcset="" />
@@ -162,6 +163,38 @@ const Dashboard = () => {
                   <span className="">RTE Dashboard</span>
                 </button>
               </li>
+              <li className="relative">
+                <button
+                onClick={() => setActive("album")}
+                className="focus:bg-slate-600 hover:bg-slate-600 flex w-full space-x-2 rounded-md px-10 py-4 text-gray-300 focus:outline-none">
+                  <span className="text-2xl">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      role="img"
+                      width="1em"
+                      height="1em"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 36 36"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M32 15h-1V9a1 1 0 0 0-1-1H6a1 1 0 0 1-1-.82v-.36A1 1 0 0 1 6 6h23.58a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3a3.08 3.08 0 0 0 0 .36v20.57A4.1 4.1 0 0 0 7.13 32H30a1 1 0 0 0 1-1v-6h1a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-3 15H7.13A2.11 2.11 0 0 1 5 27.93V9.88A3.11 3.11 0 0 0 6 10h23v5h-7a5 5 0 0 0 0 10h7Zm2-7h-9a3 3 0 0 1 0-6h9Z"
+                        className="clr-i-outline clr-i-outline-path-1"
+                      />
+                      <circle
+                        cx="23.01"
+                        cy="20"
+                        r="1.5"
+                        fill="currentColor"
+                        className="clr-i-outline clr-i-outline-path-2"
+                      />
+                      <path fill="none" d="M0 0h36v36H0z" />
+                    </svg>
+                  </span>
+                  <span className="">Album</span>
+                </button>
+              </li>
             </ul>
           </nav>
         </aside>
@@ -169,6 +202,7 @@ const Dashboard = () => {
         {active === "videos" && <Video />}
         {active === "blogs" && <Blogs />}
         {active === "stats" && <Stats />}
+        {active === "album" && <Album />}
       </div>
     </>
   );
