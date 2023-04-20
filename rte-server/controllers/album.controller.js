@@ -18,9 +18,9 @@ const createAlbum = async (req, res) => {
     api_secret: process.env.CLOUDINARY_API_SECRET,
   });
 
-  const { title, artist, releaseDate, desc, image } = req.body;
+  const { title, artist, releaseDate, desc } = req.body;
 
-  const { tracklists } = req.files || req.files.tracklists;
+  const { tracklists, image } = req.files || req.files.tracklists;
 
   try {
     const result = await Promise.all(
@@ -31,6 +31,12 @@ const createAlbum = async (req, res) => {
         });
       })
     );
+
+
+    const link =await cloudinary.uploader.upload(image.tempFilePath,{
+      folder:"RTEalbum"
+  })
+  console.log(link.secure_url)
 
     const albumFolder = [];
     for (let i = 0; i < result.length; i++) {
@@ -43,7 +49,10 @@ const createAlbum = async (req, res) => {
     const album = await Album.create({
       title,
       artist,
-      image,
+      image:{
+        public_id:link.public_id,
+                url:link.secure_url
+      },
       releaseDate,
       tracklists: albumFolder,
       desc,
