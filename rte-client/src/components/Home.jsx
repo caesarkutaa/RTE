@@ -1,6 +1,7 @@
-import React from 'react'
-import Sidebar from './partials/Sidebar'
-import Searchbar from './partials/Searchbar'
+import React from 'react';
+import Sidebar from './partials/Sidebar';
+import Searchbar from './partials/Searchbar';
+import Footer from './partials/Footer';
 const Home = () => {
   return (
     <>
@@ -27,6 +28,7 @@ const Home = () => {
       
     </div>
     </div>
+    <Footer /> 
 </>
 
 
