@@ -9,7 +9,7 @@ const Sidebar = () => {
         <span className="mr-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 align-bottom text-2xl font-bold">
             <img src={logo} alt="" srcset="" />
         </span>
-        <span className="text-lg italic ">Right Time Entertainment</span>
+        <span class="text-2xl font-bold">Right Time<span class="text-blue-600">Entertainment</span>.</span>
         </span>
 
         <input type="checkbox" class="peer hidden" id="navbar-open" />
