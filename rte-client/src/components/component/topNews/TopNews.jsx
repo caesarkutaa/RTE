@@ -5,7 +5,7 @@ import { faNewspaper } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const TopNews = () => {
   return (
-    <section className="topNews-section">
+    <section id="news" className="topNews-section">
       <div className="latest-news">
         <h1>latest News</h1>
         <FontAwesomeIcon className="newspaper" icon={faNewspaper} />

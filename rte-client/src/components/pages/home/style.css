@@ -2,3 +2,21 @@
   text-transform: capitalize;
   background: #b0c0bc;
 }
+.latest-nav {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(49, 74, 90);
+  margin-top: 20px;
+}
+.latest-nav ul li {
+  list-style: none;
+  display: inline-block;
+  font-size: 0.9rem;
+  padding: 0 5px;
+}
+.latest-nav ul li a {
+  color: snow;
+}
+.latest-nav ul li a:hover {
+  color: #f3c203;
+}

@@ -5,7 +5,7 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const TopVideos = () => {
   return (
-    <section className="topVideos-section">
+    <section id="videos" className="topVideos-section">
       <div className="latest-vids">
         <h1>latest Music Videos</h1>
         <FontAwesomeIcon className="youtube" icon={faYoutube} />

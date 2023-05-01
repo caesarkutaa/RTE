@@ -23,7 +23,7 @@ header {
   margin: auto;
   margin-left: -50px;
 }
-nav {
+header nav {
   position: fixed;
   background: rgba(0, 38, 62, 0.5);
   box-shadow: 0px 3px 3px #314a5a;
@@ -32,23 +32,23 @@ nav {
   grid-template-columns: 1.5fr 1fr;
   color: #f3c203;
 }
-nav .logo {
+header nav .logo {
   display: flex;
   gap: 5px;
 }
-nav .logo img {
+header nav .logo img {
   margin-left: 15px;
   width: 7%;
   border-radius: 20%;
   z-index: 1;
 }
-nav .logo h1 {
+header nav .logo h1 {
   margin: auto 0;
   z-index: 1;
   color: snow;
   font-weight: 650;
 }
-nav .navs {
+header nav .navs {
   margin: auto 0;
 }
 nav .navs ul li {
