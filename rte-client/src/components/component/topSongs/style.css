@@ -1,0 +1,41 @@
+.topSongs-section {
+  width: 98%;
+  margin: 20px auto;
+}
+.topSongs-section .latest {
+  display: flex;
+}
+.topSongs-section .latest h1 {
+  color: #314a5a;
+  margin: 10px 20px;
+  font-size: 2rem;
+}
+.topSongs-section .latest .itunes {
+  margin: auto 0;
+  font-size: 1.5rem;
+  color: #0830c9;
+}
+.top-Songs {
+  display: flex;
+  gap: 15px;
+  color: snow;
+  flex-wrap: wrap;
+}
+.top-Songs .container {
+  background: #5e371d;
+  flex: 200px;
+  width: 80%;
+  margin: auto;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 20px;
+}
+.top-Songs .container:hover {
+  flex: 250px;
+}
+.top-Songs .container img {
+  width: 70%;
+  margin: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}

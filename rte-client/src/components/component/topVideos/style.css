@@ -1,0 +1,39 @@
+.topVideos-section {
+  width: 98%;
+  margin: auto;
+}
+.latest-vids {
+  display: flex;
+  gap: 10px;
+}
+.latest-vids h1 {
+  font-size: 2rem;
+  margin: 10px 20px;
+}
+.latest-vids .youtube {
+  margin: auto 0;
+  font-size: 2rem;
+  color: red;
+}
+.top-videos {
+  display: flex;
+  gap: 15px;
+  color: snow;
+
+  flex-wrap: wrap;
+}
+.top-videos .container {
+  background: rgb(0, 38, 62);
+  flex: 300px;
+  width: 80%;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.top-videos .container img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.top-videos .container p {
+  margin: 10px 20px;
+}
