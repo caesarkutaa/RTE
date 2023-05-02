@@ -26,7 +26,8 @@ audio:{
               },
         
   songsvideo:{
-                type:String,
+               type:String,
+                
   },
  
 
