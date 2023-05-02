@@ -139,7 +139,7 @@ const getAllsongsWithvideo = async(req,res)=>{
 
     try {
         const songWithvideos = await Song.find({songsvideo:{$ne: '' } })
-        res.status(200).json({songWithvideos,count:songWithvideos.length});
+        res.status(200).json(songWithvideos);
     } catch (error) {
         res.status(400).json('Error: ' + error);
     }

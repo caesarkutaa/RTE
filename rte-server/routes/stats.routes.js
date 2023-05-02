@@ -20,16 +20,20 @@ router.get('/news', auth , checkAdmin ,async (req, res) => {
 
     const news = await News.find()
     res.status(200).json({news_count:news.length})
+
    })
   
 router.get('/album',auth, checkAdmin, async(req,res)=>{
         const album = await Album.find()
-        res.status(200).json({album,count:album.length})
+        res.status(200).json({album_count:album.length})
+        
+        console.log(album_count)
+})
+
+router.get('/video',auth, checkAdmin, async(req,res)=>{
+        const songWithvideos = await Song.find({songsvideo:{$ne: '' } })
+        res.status(200).json({songWithvideos_count:songWithvideos.length});
 })
   
   module.exports = router
-  
-  
-  
-  
   

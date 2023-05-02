@@ -9,6 +9,8 @@ const Stats = () => {
 
     const [songStats, setsongStats] = useState()
     const [newsStats, setNewsStats] = useState()
+    const [albumsStats, setAlbumsStats] = useState()
+    const [musicVideoStats, setmusicVideoStats] = useState()
 
     const token = cookies.get("Token");
     const fetchSongStats = async () => {
@@ -43,9 +45,46 @@ const Stats = () => {
         }
     }
 
+    const fetchAlbumsStats = async () => {
+      try {
+          const response = await axios.get(`${stats_URL}album`, 
+              {
+                headers: {
+                   Authorization: `Bearer ${token}`,
+                   Accept: 'application/json', 
+                }
+              }  
+              );
+              setAlbumsStats(response?.data?.album_count)
+
+      } catch (error) {
+          console.log(error)
+      }
+  }
+
+
+  const fetchMusicVideoStats = async () => {
+    try {
+        const response = await axios.get(`${stats_URL}video`, 
+            {
+              headers: {
+                 Authorization: `Bearer ${token}`,
+                 Accept: 'application/json', 
+              }
+            }  
+            );
+            setmusicVideoStats(response?.data?.songWithvideos_count)
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
     useEffect(() => {
         fetchSongStats();
         fetchNewsStats();
+        fetchAlbumsStats();
+        fetchMusicVideoStats();
       }, []);
   return (
     <div>
@@ -77,16 +116,16 @@ const Stats = () => {
       <div class="relative overflow-hidden border-t-4 border-blue-500 bg-gray-600 shadow">
         <div class="px-6 py-10">
           <div class="flex items-center">
-            <h3 class="relative ml-2 inline-block text-4xl font-bold leading-none">41+</h3>
-            <span class="ml-3 text-base font-medium capitalize">jobs created</span>
+            <h3 class="relative ml-2 inline-block text-4xl font-bold leading-none">{albumsStats}</h3>
+            <span class="ml-3 text-base font-medium capitalize">album posted</span>
           </div>
         </div>
       </div>
       <div class="relative overflow-hidden border-t-4 border-blue-500 bg-gray-600 shadow">
         <div class="px-6 py-10">
           <div class="flex items-center">
-            <h3 class="relative ml-2 inline-block text-4xl font-bold leading-none">99%</h3>
-            <span class="ml-3 text-base font-medium capitalize">Happy Customers</span>
+            <h3 class="relative ml-2 inline-block text-4xl font-bold leading-none">{musicVideoStats}</h3>
+            <span class="ml-3 text-base font-medium capitalize">Music Video</span>
           </div>
         </div>
       </div>
