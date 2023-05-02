@@ -4,6 +4,8 @@ import Header from "../../component/header/Header.jsx";
 import TopSongs from "../../component/topSongs/TopSongs.jsx";
 import TopNews from "../../component/topNews/TopNews.jsx";
 import "./style.css";
+import Footer from "../../partials/Footer.jsx";
+
 const Home = () => {
   return (
     <main className="Home">
@@ -24,6 +26,7 @@ const Home = () => {
       <TopSongs />
       <TopVideos />
       <TopNews />
+      <Footer />
     </main>
   );
 };
