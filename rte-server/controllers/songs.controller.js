@@ -134,6 +134,19 @@ const updatevideo = async(req,res)=>{
 }
 
 
+const getAllsongsWithvideo = async(req,res)=>{
+
+
+    try {
+        const songWithvideos = await Song.find({songsvideo:{$ne: '' } })
+        res.status(200).json({songWithvideos,count:songWithvideos.length});
+    } catch (error) {
+        res.status(400).json('Error: ' + error);
+    }
+    
+
+}
+
 module.exports = {
 getAllsongs,
 searchForSong,
@@ -142,4 +155,5 @@ uploadNewsong,
 updateSong,
 deleteSong,
 updatevideo ,
+getAllsongsWithvideo
 }
