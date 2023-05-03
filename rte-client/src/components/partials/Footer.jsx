@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <div>
-        <footer class="bg-gray-50">
+        <footer class="bg-footer mt-3">
   <div class="mx-auto grid max-w-screen-xl gap-y-8 gap-x-12 px-4 py-10 md:grid-cols-2 xl:grid-cols-4 xl:px-10">
     <div class="max-w-sm">
       <div class="mb-6 flex h-12 items-center space-x-2">
@@ -12,7 +12,7 @@ const Footer = () => {
     </div>
     <div class="">
       <div class="mt-4 mb-2 font-medium xl:mb-4">Links</div>
-      <nav aria-label="Footer Navigation" class="text-gray-500">
+      <nav aria-label="Footer Navigation" class="text-white">
         <ul class="space-y-3">
           <li><a class="hover:text-blue-600 hover:underline" href="#">Home</a></li>
           <li><a class="hover:text-blue-600 hover:underline" href="#">Songs</a></li>
@@ -32,8 +32,8 @@ const Footer = () => {
       </div>
     </div>
   </div>
-  <div class="bg-gray-100">
-    <div class="mx-auto  max-w-screen-xl  px-4 py-3 text-center text-gray-500 ">
+  <div class="bg-footer">
+    <div class="mx-auto  max-w-screen-xl  px-4 py-3 text-center text-gray-100 ">
       <div class="text-center">© 2023 Right Time Entertainment | All Rights Reserved</div>
     </div>
   </div>

@@ -6,7 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      
+      colors:{
+        footer:'rgb(95, 132, 166)'
+      }
     },
   },
   plugins: [],
