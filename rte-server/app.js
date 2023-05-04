@@ -13,10 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.json())
 
-// const whitelist = ['http://localhost:5173', 'http://localhost:5173'];
+ const whitelist = ['http://localhost:5173', 'http://127.0.0.1:5173'];
 
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: whitelist
 }));
 app.use(expressfileuploader({
   useTempFiles: true
