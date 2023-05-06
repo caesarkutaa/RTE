@@ -2,6 +2,7 @@
   "name": "rte-server",
   "version": "1.0.0",
   "description": "",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js"
@@ -24,5 +25,10 @@
     "multer-storage-cloudinary": "^4.0.0",
     "nodemon": "^2.0.22",
     "universal-cookie": "^4.0.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/express-fileupload": "^1.4.1"
   }
 }
