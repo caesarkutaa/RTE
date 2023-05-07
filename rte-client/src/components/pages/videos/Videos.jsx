@@ -10,7 +10,7 @@ const Videos = () => {
   const [musicVideos, setMusicVideos] = useState([]);
   const [fetching, setFetching] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(5);
+  const [itemsPerPage] = useState(3);
   useEffect(() => {
     getVideos();
   }, []);

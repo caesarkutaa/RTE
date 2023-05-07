@@ -9,7 +9,7 @@ const News = () => {
   const [fetching, setFetching] = useState(true);
   const [allNews, setAllNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(5);
+  const [itemsPerPage] = useState(3);
 
   useEffect(() => {
     getNews();
