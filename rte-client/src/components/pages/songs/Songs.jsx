@@ -21,7 +21,7 @@ const Songs = () => {
     axios
       .get("/song/")
       .then((res) => {
-        console.log(res.data.songs);
+        //console.log(res.data.songs);
         setAllSongs(res.data.songs);
         setFetching(false);
       })

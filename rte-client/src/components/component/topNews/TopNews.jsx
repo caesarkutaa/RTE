@@ -15,7 +15,7 @@ const TopNews = () => {
     axios
       .get("/news/")
       .then((res) => {
-        console.log(res.data.Allnews);
+        //console.log(res.data.Allnews);
         setNews(res.data.Allnews);
         setFetching(false);
       })
@@ -23,7 +23,7 @@ const TopNews = () => {
         console.log(err);
       });
   };
-  console.log(news);
+  //console.log(news);
   return (
     <section id="news" className="news-section">
       <div className="latest-news">

@@ -1,4 +1,4 @@
-.topVideos-section {
+.videos-section {
   width: 98%;
   margin: auto;
 }
@@ -24,7 +24,9 @@
 }
 .top-videos .container {
   background: rgb(0, 38, 62);
-  width: 80%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
+  width: 90%;
   margin: 20px;
   cursor: pointer;
   border-radius: 20px;

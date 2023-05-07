@@ -19,7 +19,7 @@ const TopNews = () => {
     axios
       .get("/song/")
       .then((res) => {
-        console.log(res.data.songs);
+        //console.log(res.data.songs);
         setMusic(res.data.songs);
         setFetching(false);
       })
@@ -39,7 +39,7 @@ const TopNews = () => {
     });
   };
 
-  console.log(music);
+  //console.log(music);
 
   return (
     <section id="songs" className="songs-section">

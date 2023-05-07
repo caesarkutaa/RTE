@@ -20,7 +20,7 @@ const News = () => {
     axios
       .get("/news/")
       .then((res) => {
-        console.log(res.data.Allnews);
+        //console.log(res.data.Allnews);
         setAllNews(res.data.Allnews);
         setFetching(false);
       })
