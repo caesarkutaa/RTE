@@ -9,7 +9,8 @@ const { getAllsongs,
         uploadNewsong,
         updateSong,
         deleteSong,
-        updatevideo  } = require('../controllers/songs.controller')
+        updatevideo,
+        getAllsongsWithvideo  } = require('../controllers/songs.controller')
 
 
 //middleware
@@ -24,6 +25,7 @@ router.post('/', auth,uploadNewsong)
 router.patch('/:id',auth ,updateSong)
 router.patch('/addvideo/:id',auth , updatevideo)
 router.delete('/:id',auth, deleteSong)
+router.get('/songs/videos',getAllsongsWithvideo)
 
 
 module.exports = router
