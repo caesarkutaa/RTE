@@ -1,15 +1,15 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import TopVideos from "../../component/topVideos/TopVideos.jsx";
-import Header from "../../component/header/Header.jsx";
 import TopSongs from "../../component/topSongs/TopSongs.jsx";
 import TopNews from "../../component/topNews/TopNews.jsx";
 import "./style.css";
 import Footer from "../../partials/Footer.jsx";
 
 const Home = () => {
+  const [idx, setIdx] = useState();
+
   return (
     <main className="Home">
-      <Header />
       <nav className="latest-nav">
         <ul>
           <li>

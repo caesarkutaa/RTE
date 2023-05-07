@@ -1,7 +1,11 @@
 import React from "react";
 
 const Videos = () => {
-  return <div></div>;
+  return (
+    <section>
+      <h1>all videos</h1>
+    </section>
+  );
 };
 
 export default Videos;

@@ -16,19 +16,21 @@
   color: red;
 }
 .top-videos {
-  display: flex;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   color: snow;
-
   flex-wrap: wrap;
 }
 .top-videos .container {
   background: rgb(0, 38, 62);
-  flex: 300px;
   width: 80%;
   margin: 20px;
   cursor: pointer;
   border-radius: 20px;
+}
+.top-videos .container:hover {
+  scale: 1.1;
 }
 .top-videos .container img {
   width: 100%;
@@ -36,4 +38,14 @@
 }
 .top-videos .container p {
   margin: 10px 20px;
+}
+@media screen and (max-width: 755px) {
+  .top-videos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  .top-videos {
+    grid-template-columns: 1fr;
+  }
 }
