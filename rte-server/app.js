@@ -26,6 +26,7 @@ app.use(
     useTempFiles: true,
   })
 );
+
 //connect database
 require("./DB/db").connect();
 
