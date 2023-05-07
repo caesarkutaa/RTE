@@ -15,7 +15,7 @@ header {
   padding: 10px;
   border: 2px solid rgb(49, 74, 90);
   border-radius: 15px;
-  background: linear-gradient(to left, #55c1df, #e5bfa7);
+  background: snow;
 }
 .search .search-icon {
   color: #f3c203;
