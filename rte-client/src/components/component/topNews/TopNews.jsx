@@ -39,6 +39,9 @@ const TopNews = () => {
               <img src={newss.image.url} alt="" />
               <h2> {newss.title}</h2>
               <p>{newss.description}</p>
+              <a className="read-more" href="">
+                Read More
+              </a>
             </div>
           ))}
         </div>
