@@ -8,6 +8,7 @@ import Songs from "./components/pages/songs/Songs.jsx";
 import Videos from "./components/pages/videos/Videos.jsx";
 import News from "./components/pages/news/News.jsx";
 import "./App.css";
+import YoutubeEmbed from "./components/pages/youtubeEmbed/YoutubeEmbed";
 import ItemDetails from "./components/pages/itemDetails/ItemDetails.jsx";
 import Header from "../src/components/component/header/Header.jsx";
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="admin" element={<Admin />} />
         </Route>
         <Route path="/itemDetails" element={<ItemDetails />} />
+        <Route path="/youtubeEmbed" element={<YoutubeEmbed />} />
       </Routes>
     </>
   );

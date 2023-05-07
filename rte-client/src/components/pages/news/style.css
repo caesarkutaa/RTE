@@ -1,0 +1,9 @@
+.read-more {
+  color: snow;
+  background: rgb(0, 38, 62);
+  padding: 10px 25px;
+  border-radius: 5px;
+}
+.read-more:hover {
+  scale: 1.1;
+}

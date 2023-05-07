@@ -11,7 +11,7 @@ const Songs = () => {
   const [fetching, setFetching] = useState(true);
   const [allSongs, setAllSongs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(5);
+  const [itemsPerPage] = useState(3);
   useEffect(() => {
     getSongs();
   }, []);
@@ -21,7 +21,7 @@ const Songs = () => {
     axios
       .get("/song/")
       .then((res) => {
-        console.log(res.data.songs);
+        //console.log(res.data.songs);
         setAllSongs(res.data.songs);
         setFetching(false);
       })

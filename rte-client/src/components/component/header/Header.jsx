@@ -16,16 +16,37 @@ const Header = () => {
         <div className={`${open ? "navs open" : "navs"}`}>
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink
+                className={({ isActive }) => (isActive ? "activate" : "")}
+                to="/"
+                end
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/songs">Songs</NavLink>
+              <NavLink
+                className={({ isActive }) => (isActive ? "activate" : "")}
+                to="/songs"
+              >
+                Songs
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/videos">Videos</NavLink>
+              <NavLink
+                className={({ isActive }) => (isActive ? "activate" : "")}
+                to="/videos"
+              >
+                Videos
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/news">News</NavLink>
+              <NavLink
+                className={({ isActive }) => (isActive ? "activate" : "")}
+                to="/news"
+              >
+                News
+              </NavLink>
             </li>
           </ul>
         </div>

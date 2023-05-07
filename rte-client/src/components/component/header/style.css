@@ -9,13 +9,13 @@ header {
   text-align: center;
 }
 .search input {
-  width: 50%;
+  width: 70%;
   outline: none;
   color: #314a5a;
   padding: 10px;
   border: 2px solid rgb(49, 74, 90);
   border-radius: 15px;
-  background: linear-gradient(to left, #55c1df, #e5bfa7);
+  background: snow;
 }
 .search .search-icon {
   color: #f3c203;
@@ -30,7 +30,7 @@ header nav {
   backdrop-filter: blur(15px);
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  color: #f3c203;
+  color: snow;
 }
 header nav .logo {
   display: flex;
@@ -56,6 +56,10 @@ nav .navs ul li {
   padding: 0 10px;
   font-size: 1.1rem;
 }
+.navs .activate {
+  color: #f3c203;
+  font-size: 1.3rem;
+}
 .hamburger-btn {
   display: none;
 }
@@ -75,7 +79,7 @@ nav .navs ul li {
     margin: 5px auto;
     width: 35px;
     border-radius: 15px;
-    background: snow;
+    background: #f3c203;
     transition: transform 0.3s ease-in-out;
   }
   .hamburger-btn.active .line:nth-child(1) {
@@ -94,7 +98,7 @@ nav .navs ul li {
     right: 100%;
     text-align: center;
     width: 30%;
-    background-color: #f3c203;
+    background-color: snow;
     color: #314a5a;
     transition: all 2s ease-in-out;
   }

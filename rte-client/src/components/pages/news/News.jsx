@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "../../../API/axios";
+import "./style.css";
 import { faNewspaper } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Pagination from "../../component/pagination/Pagination";
@@ -8,7 +9,7 @@ const News = () => {
   const [fetching, setFetching] = useState(true);
   const [allNews, setAllNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(5);
+  const [itemsPerPage] = useState(3);
 
   useEffect(() => {
     getNews();
@@ -19,7 +20,7 @@ const News = () => {
     axios
       .get("/news/")
       .then((res) => {
-        console.log(res.data.Allnews);
+        //console.log(res.data.Allnews);
         setAllNews(res.data.Allnews);
         setFetching(false);
       })
@@ -46,6 +47,9 @@ const News = () => {
               <img src={newss.image.url} alt="" />
               <h2> {newss.title}</h2>
               <p>{newss.description}</p>
+              <a className="read-more" href="">
+                Read More
+              </a>
             </div>
           ))}
         </div>
