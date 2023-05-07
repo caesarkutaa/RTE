@@ -42,8 +42,10 @@ const Songs = () => {
       setSongArtist("");
       setSongVideo("");
       setFile();
+      setErrMsg("")
     } catch (error) {
       setErrMsg("song not uploaded. try again ");
+      setSuccess("")
     }
   };
   function handleFile(event) {
