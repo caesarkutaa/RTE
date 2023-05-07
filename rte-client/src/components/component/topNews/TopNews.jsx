@@ -25,7 +25,7 @@ const TopNews = () => {
   };
   console.log(news);
   return (
-    <section id="news" className="topNews-section">
+    <section id="news" className="news-section">
       <div className="latest-news">
         <h1>latest News</h1>
         <FontAwesomeIcon className="newspaper" icon={faNewspaper} />
