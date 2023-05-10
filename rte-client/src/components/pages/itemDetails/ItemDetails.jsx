@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "./style.css";
 const ItemDetails = () => {
   const { state } = useLocation();
-  const { image, name, artist, audio, video } = state;
+  const { image, name, artist, audio, desc, video } = state;
 
   console.log(state);
   return (
@@ -11,6 +11,7 @@ const ItemDetails = () => {
       <img src={image} alt="logo" />
       <p>{name}</p>
       <p>{artist}</p>
+      <p className="description">{desc}</p>
       <audio controls src={audio}></audio>
       <a href={audio} download={`${name} - ${artist}.mp3`}>
         Download

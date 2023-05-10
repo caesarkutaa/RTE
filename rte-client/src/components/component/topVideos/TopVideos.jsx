@@ -26,12 +26,13 @@ const TopVideos = () => {
         console.log(err);
       });
   };
-  const handleClick = (songsVideo, name, artist, audio) => {
+  const handleClick = (songsVideo, name, artist, desc, audio) => {
     navigate("/youtubeEmbed", {
       state: {
         songsvideo: songsVideo,
         name: name,
         artist: artist,
+        desc: desc,
         audio: audio,
       },
     });
@@ -55,6 +56,7 @@ const TopVideos = () => {
                   videos.songsVideo,
                   videos.songname,
                   videos.artist,
+                  videos.desc,
                   videos.audio.url
                 );
               }}

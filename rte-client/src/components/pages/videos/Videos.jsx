@@ -32,12 +32,13 @@ const Videos = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = musicVideos.slice(indexOfFirstItem, indexOfLastItem);
   const nPages = Math.ceil(musicVideos.length / itemsPerPage);
-  const handleClick = (songsVideo, name, artist, audio) => {
+  const handleClick = (songsVideo, name, artist, desc, audio) => {
     navigate("/youtubeEmbed", {
       state: {
         songsvideo: songsVideo,
         name: name,
         artist: artist,
+        desc: desc,
         audio: audio,
       },
     });
@@ -61,6 +62,7 @@ const Videos = () => {
                   videos.songsVideo,
                   videos.songname,
                   videos.artist,
+                  videos.desc,
                   videos.audio.url
                 );
               }}

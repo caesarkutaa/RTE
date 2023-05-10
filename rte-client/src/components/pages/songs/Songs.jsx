@@ -34,13 +34,14 @@ const Songs = () => {
   const currentItems = allSongs.slice(indexOfFirstItem, indexOfLastItem);
   const nPages = Math.ceil(allSongs.length / itemsPerPage);
 
-  const handleClick = (name, artist, audio, video) => {
+  const handleClick = (name, artist, audio, desc, video) => {
     navigate("/itemDetails", {
       state: {
         image: logo,
         name: name,
         artist: artist,
         audio: audio,
+        desc: desc,
         video: video,
       },
     });
@@ -66,6 +67,7 @@ const Songs = () => {
                   songs.songname,
                   songs.artist,
                   songs.audio.url,
+                  songs.desc,
                   songs.songsvideo
                 );
               }}
