@@ -27,19 +27,20 @@ const TopNews = () => {
         console.log(err);
       });
   };
-  const handleClick = (name, artist, audio, video) => {
+  const handleClick = (name, artist, audio, desc, video) => {
     navigate("/itemDetails", {
       state: {
         image: logo,
         name: name,
         artist: artist,
         audio: audio,
+        desc: desc,
         video: video,
       },
     });
   };
 
-  //console.log(music);
+  console.log(music);
 
   return (
     <section id="songs" className="songs-section">
@@ -60,12 +61,13 @@ const TopNews = () => {
                   songs.songname,
                   songs.artist,
                   songs.audio.url,
+                  songs.desc,
                   songs.songsvideo
                 );
               }}
               className="container"
             >
-              <img src={logo} alt="" />
+              <img src={songs.image.url} alt="" />
               <p> {songs.songname}</p>
               <p>{songs.artist}</p>
             </div>

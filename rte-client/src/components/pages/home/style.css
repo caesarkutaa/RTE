@@ -8,6 +8,10 @@
   background-color: rgb(49, 74, 90);
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 }
+.description {
+  font-size: 1rem !important;
+  color: black !important;
+}
 .latest-nav ul li {
   list-style: none;
   display: inline-block;
