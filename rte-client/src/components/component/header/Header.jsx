@@ -1,11 +1,19 @@
 import logo from "../../../assets/logo.jpeg";
+import SearchBar from "../searchBar/SearchBar";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./style.css";
 const Header = () => {
+  const [search, setSearch] = useState();
   const [open, setOpen] = useState(false);
+  const searchResult = (val) => {
+    setSearch(val);
+    if (search !== "") {
+    }
+  };
   return (
     <header>
       <nav>
@@ -48,6 +56,14 @@ const Header = () => {
                 News
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                className={({ isActive }) => (isActive ? "activate" : "")}
+                to="/albums"
+              >
+                Albums
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div
@@ -59,10 +75,6 @@ const Header = () => {
           <span className="line" />
         </div>
       </nav>
-      <div className="search">
-        <input type="search" name="search" />
-        <FontAwesomeIcon className="search-icon" icon={faSearch} />
-      </div>
     </header>
   );
 };

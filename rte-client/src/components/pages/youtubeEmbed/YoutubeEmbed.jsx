@@ -12,8 +12,8 @@ const YoutubeEmbed = () => {
       <p className="description">{desc}</p>
       <iframe
         width=" 853"
-        height="400"
-        src={`https://www.youtube.com/embed/v8SNlvR86xc`}
+        height="500"
+        src={`https://www.youtube.com/embed/${video}`}
         allowFullScreen
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         title="Embedded Youtube"

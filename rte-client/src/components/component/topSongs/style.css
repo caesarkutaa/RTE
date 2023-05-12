@@ -19,7 +19,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  color: snow;
+  color:  #f3c203;
   flex-wrap: wrap;
 }
 .top-Songs .container {

@@ -1,0 +1,16 @@
+.news-body {
+  margin-top: 100px;
+}
+.news-body img {
+  width: 70%;
+  height: 40vh;
+  margin: 0 10px;
+}
+.news-body h1 {
+  margin: 10px;
+  font-size: 1.7rem;
+}
+.news-body p {
+  margin: 10px;
+  font-size: 1.1rem;
+}
