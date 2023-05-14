@@ -1,36 +1,16 @@
 import logo from "../../../assets/logo.jpeg";
 import "./style.css";
-import axios from "../../../API/axios";
 import { faItunesNote } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-//import ItemDetails from "../../pages/itemDetails/ItemDetails.jsx";
-const TopNews = () => {
-  const navigate = useNavigate();
-  const [music, setMusic] = useState([]);
-  const [fetching, setFetching] = useState(true);
-  useEffect(() => {
-    getSongs();
-  }, []);
 
-  const getSongs = () => {
-    setFetching(true);
-    axios
-      .get("/song/")
-      .then((res) => {
-        //console.log(res.data.songs);
-        setMusic(res.data.songs);
-        setFetching(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  const handleClick = (name, artist, audio, desc, video) => {
+const TopSongs = ({ searchResultCount, searchedSongs, fetching }) => {
+  const navigate = useNavigate();
+  const handleClick = (image, name, artist, audio, desc, video) => {
     navigate("/itemDetails", {
       state: {
-        image: logo,
+        image: image,
         name: name,
         artist: artist,
         audio: audio,
@@ -39,8 +19,6 @@ const TopNews = () => {
       },
     });
   };
-
-  console.log(music);
 
   return (
     <section id="songs" className="songs-section">
@@ -53,29 +31,57 @@ const TopNews = () => {
         <> fecthing songs....</>
       ) : (
         <div className="top-Songs">
-          {music.map((songs, id) => (
-            <div
-              key={id}
-              onClick={() => {
-                handleClick(
-                  songs.songname,
-                  songs.artist,
-                  songs.audio.url,
-                  songs.desc,
-                  songs.songsvideo
-                );
-              }}
-              className="container"
-            >
-              <img src={songs.image.url} alt="" />
-              <p> {songs.songname}</p>
-              <p>{songs.artist}</p>
-            </div>
-          ))}
+          {searchResultCount.length >= 1 ? (
+            <>
+              {searchedSongs.map((songs, id) => (
+                <div
+                  key={id}
+                  onClick={() => {
+                    handleClick(
+                      songs.image.url,
+                      songs.songname,
+                      songs.artist,
+                      songs.audio.url,
+                      songs.desc,
+                      songs.songsvideo
+                    );
+                  }}
+                  className="container"
+                >
+                  <img src={songs.image.url} alt="" />
+                  <p> {songs.songname}</p>
+                  <p>{songs.artist}</p>
+                </div>
+              ))}
+            </>
+          ) : (
+            <>
+              {searchedSongs.slice(0, 3).map((songs, id) => (
+                <div
+                  key={id}
+                  onClick={() => {
+                    handleClick(
+                      songs.image.url,
+                      songs.songname,
+                      songs.artist,
+                      songs.audio.url,
+                      songs.desc,
+                      songs.songsvideo
+                    );
+                  }}
+                  className="container"
+                >
+                  <img src={songs.image.url} alt="" />
+                  <p> {songs.songname}</p>
+                  <p>{songs.artist}</p>
+                </div>
+              ))}
+            </>
+          )}
         </div>
       )}
     </section>
   );
 };
 
-export default TopNews;
+export default TopSongs;
