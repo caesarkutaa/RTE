@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faItunesNote } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import Footer from "../../partials/Footer.jsx";
+import Carousel from "../../component/carousel/Carousel.jsx";
 let searchResultCount = 0;
 const Home = () => {
   const [news, setNews] = useState([]);
@@ -129,6 +130,7 @@ const Home = () => {
             </li>
           </ul>
         </nav>
+        <Carousel />
         <TopSongs
           searchResultCount={searchResultCount}
           searchedSongs={searchedSongs}

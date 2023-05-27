@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const TopSongs = ({ searchResultCount, searchedSongs, fetching }) => {
   const navigate = useNavigate();
   const handleClick = (image, name, artist, audio, desc, video) => {
-    navigate("/itemDetails", {
+    navigate("/song", {
       state: {
         image: image,
         name: name,
@@ -33,9 +33,9 @@ const TopSongs = ({ searchResultCount, searchedSongs, fetching }) => {
         <div className="top-Songs">
           {searchResultCount.length >= 1 ? (
             <>
-              {searchedSongs.map((songs, id) => (
+              {searchedSongs.map((songs) => (
                 <div
-                  key={id}
+                  key={songs.id}
                   onClick={() => {
                     handleClick(
                       songs.image.url,

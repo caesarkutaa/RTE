@@ -53,10 +53,10 @@ const Songs = () => {
   const currentItems = searchedSongs.slice(indexOfFirstItem, indexOfLastItem);
   const nPages = Math.ceil(searchedSongs.length / itemsPerPage);
 
-  const handleClick = (name, artist, audio, desc, video) => {
-    navigate("/itemDetails", {
+  const handleClick = (img, name, artist, audio, desc, video) => {
+    navigate("/song", {
       state: {
-        image: logo,
+        image: img,
         name: name,
         artist: artist,
         audio: audio,
@@ -83,6 +83,7 @@ const Songs = () => {
                 key={id}
                 onClick={() => {
                   handleClick(
+                    songs.image.url,
                     songs.songname,
                     songs.artist,
                     songs.audio.url,
@@ -92,7 +93,7 @@ const Songs = () => {
                 }}
                 className="container"
               >
-                <img src={logo} alt="" />
+                <img src={songs.image.url} alt="" />
                 <p> {songs.songname}</p>
                 <p>{songs.artist}</p>
               </div>
