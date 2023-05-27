@@ -1,23 +1,16 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import useDownloader from "react-use-downloader";
 import "./style.css";
 const ItemDetails = () => {
   const { state } = useLocation();
   const { image, name, artist, audio, desc, video } = state;
-
+  // const { size, elapsed, percentage, download, cancel } = useDownloader();
+  // const fileUrl = audio;
+  // const fileName = `${name} - ${artist}.mp4`;
   console.log(state);
   return (
     <section className="details-section">
-      <div>
-        <img src={image} alt="logo" />
-        <p>{name}</p>
-        <p>{artist}</p>
-        <p className="description">{desc}</p>
-        <audio controls src={audio}></audio>
-        <a href={audio} download={`${name} - ${artist}.mp3`}>
-          Download
-        </a>
-      </div>
       <div>
         <iframe
           width=" 853"
@@ -28,6 +21,13 @@ const ItemDetails = () => {
           title="Embedded Youtube"
           frameBorder="0"
         />
+      </div>
+      <div>
+        <audio controls src={audio}></audio>
+        <button>Download</button>
+        <p>{name}</p>
+        <p>{artist}</p>
+        <p className="description">{desc}</p>
       </div>
     </section>
   );

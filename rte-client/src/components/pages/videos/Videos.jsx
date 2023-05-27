@@ -48,7 +48,7 @@ const Videos = () => {
   const currentItems = searchedVideos.slice(indexOfFirstItem, indexOfLastItem);
   const nPages = Math.ceil(searchedVideos.length / itemsPerPage);
   const handleClick = (songsVideo, name, artist, desc, audio) => {
-    navigate("/youtubeEmbed", {
+    navigate("/video", {
       state: {
         songsvideo: songsVideo,
         name: name,
@@ -71,9 +71,9 @@ const Videos = () => {
           <> fecthing songs....</>
         ) : (
           <div className="top-videos">
-            {currentItems.map((videos, id) => (
+            {currentItems.map((videos) => (
               <div
-                key={id}
+                key={videos.id}
                 onClick={() => {
                   handleClick(
                     videos.songsVideo,

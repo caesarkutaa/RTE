@@ -1,0 +1,13 @@
+.reactSlick {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  z-index: 0;
+}
+.reactSlick img {
+  width: 50%;
+  margin: auto;
+  height: 20vh;
+  z-index: 0;
+}

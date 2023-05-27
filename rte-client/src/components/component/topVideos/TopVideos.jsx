@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const TopVideos = ({ searchedVideos, searchResultCount, fetching }) => {
   const navigate = useNavigate();
   const handleClick = (songsVideo, name, artist, desc, audio) => {
-    navigate("/youtubeEmbed", {
+    navigate("/video", {
       state: {
         songsvideo: songsVideo,
         name: name,
@@ -29,9 +29,9 @@ const TopVideos = ({ searchedVideos, searchResultCount, fetching }) => {
         <div className="top-videos">
           {searchResultCount.length >= 1 ? (
             <>
-              {searchedVideos.map((videos, id) => (
+              {searchedVideos.map((videos) => (
                 <div
-                  key={id}
+                  key={videos.id}
                   onClick={() => {
                     handleClick(
                       videos.songsVideo,
@@ -65,7 +65,7 @@ const TopVideos = ({ searchedVideos, searchResultCount, fetching }) => {
                   }}
                   className="container"
                 >
-                  <img src={logo} alt="" />
+                  <img src={videos.image.url} alt="" />
                   <p> {videos.songname}</p>
                   <p>{videos.artist}</p>
                 </div>

@@ -24,7 +24,10 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "3.0.1",
+    "react-slick": "^0.29.0",
     "react-toastify": "^5.3.1",
+    "react-use-downloader": "^1.2.4",
+    "slick-carousel": "^1.8.1",
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {

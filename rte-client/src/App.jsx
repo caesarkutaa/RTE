@@ -10,6 +10,7 @@ import Videos from "./components/pages/videos/Videos";
 import News from "./components/pages/news/News";
 import "./App.css";
 //import { getMusic } from "./API/axios";
+import AlbumDetail from "./components/pages/albumDetails/AlbumDetail";
 import NewsBody from "./components/pages/newsDescription/NewsBody";
 import YoutubeEmbed from "./components/pages/youtubeEmbed/YoutubeEmbed";
 import ItemDetails from "./components/pages/itemDetails/ItemDetails.jsx";
@@ -32,9 +33,10 @@ function App() {
         <Route element={<RequireAuth />}>
           <Route path="admin" element={<Admin />} />
         </Route>
-        <Route path="/itemDetails" element={<ItemDetails />} />
-        <Route path="/youtubeEmbed" element={<YoutubeEmbed />} />
+        <Route path="/song" element={<ItemDetails />} />
+        <Route path="/video" element={<YoutubeEmbed />} />
         <Route path="/newsBody" element={<NewsBody />} />
+        <Route path="/album" element={<AlbumDetail />} />
       </Routes>
     </>
   );
