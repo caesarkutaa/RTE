@@ -17,7 +17,8 @@ const Carousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    lazyLoad: true,
+    autoplaySpeed: 3000,
   };
   useEffect(() => {
     getSongs();
@@ -41,8 +42,13 @@ const Carousel = () => {
 
   return (
     <div className="reactSlick">
-      <Slider {...settings}>
-        <div>
+      <Slider className="slide" {...settings}>
+        {allSongs.slice(0, 4).map((song, id) => (
+          <div key={id}>
+            <img src={song.image.url} alt="" />
+          </div>
+        ))}
+        {/* <div>
           <img src={logo} alt="" />
         </div>
         <div>
@@ -53,7 +59,7 @@ const Carousel = () => {
         </div>
         <div>
           <img src={logo} alt="" />
-        </div>
+        </div> */}
       </Slider>
     </div>
   );

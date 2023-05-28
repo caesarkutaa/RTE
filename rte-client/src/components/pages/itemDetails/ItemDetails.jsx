@@ -5,7 +5,8 @@ import "./style.css";
 const ItemDetails = () => {
   const { state } = useLocation();
   const { image, name, artist, audio, desc, video } = state;
-  // const { size, elapsed, percentage, download, cancel } = useDownloader();
+  // const { size, elapsed, percentage, download, cancel, error, isInProgress } =
+  //   useDownloader();
   // const fileUrl = audio;
   // const fileName = `${name} - ${artist}.mp4`;
   console.log(state);
@@ -25,6 +26,7 @@ const ItemDetails = () => {
       <div>
         <audio controls src={audio}></audio>
         <button>Download</button>
+
         <p>{name}</p>
         <p>{artist}</p>
         <p className="description">{desc}</p>

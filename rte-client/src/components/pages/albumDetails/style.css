@@ -1,0 +1,11 @@
+.album h3 {
+  font-size: 1.8rem;
+  color: #f3c203;
+}
+.album h5 {
+  font-size: 1.2rem;
+  color: rgb(0, 38, 62);
+}
+.album p {
+  font-size: 1.2rem;
+}
