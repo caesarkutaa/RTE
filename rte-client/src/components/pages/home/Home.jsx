@@ -146,7 +146,6 @@ const Home = () => {
           searchedNews={searchedNews}
           fetching={fetching}
         />
-        <Footer />
       </main>
     </>
   );
