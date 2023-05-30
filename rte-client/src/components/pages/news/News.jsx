@@ -66,7 +66,7 @@ const News = () => {
           <FontAwesomeIcon className="newspaper" icon={faNewspaper} />
         </div>
         {fetching ? (
-          <>fetching....</>
+          <>fetching.......</>
         ) : (
           <div className="top-news">
             {currentItems.map((newss, id) => (

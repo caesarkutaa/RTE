@@ -25,7 +25,7 @@ const TopNews = ({ searchResultCount, searchedNews, fetching }) => {
         <FontAwesomeIcon className="newspaper" icon={faNewspaper} />
       </div>
       {fetching ? (
-        <>fetching....</>
+        <>fetching .......</>
       ) : (
         <div className="top-news">
           {searchResultCount.length >= 1 ? (

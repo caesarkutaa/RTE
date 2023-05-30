@@ -75,7 +75,7 @@ const Songs = () => {
           <FontAwesomeIcon className="itunes" icon={faItunesNote} />
         </div>
         {fetching ? (
-          <>fetching</>
+          <>fetching .........</>
         ) : (
           <div className="top-Songs">
             {currentItems.map((songs, id) => (

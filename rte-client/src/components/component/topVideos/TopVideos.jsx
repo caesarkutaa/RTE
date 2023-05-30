@@ -24,7 +24,7 @@ const TopVideos = ({ searchedVideos, searchResultCount, fetching }) => {
         <FontAwesomeIcon className="youtube" icon={faYoutube} />
       </div>
       {fetching ? (
-        <> fecthing songs....</>
+        <> fecthing .........</>
       ) : (
         <div className="top-videos">
           {searchResultCount.length >= 1 ? (
