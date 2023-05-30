@@ -68,7 +68,7 @@ const Videos = () => {
           <FontAwesomeIcon className="youtube" icon={faYoutube} />
         </div>
         {fetching ? (
-          <> fecthing songs....</>
+          <> fecthing ......</>
         ) : (
           <div className="top-videos">
             {currentItems.map((videos) => (

@@ -28,7 +28,7 @@ const TopSongs = ({ searchResultCount, searchedSongs, fetching }) => {
         <FontAwesomeIcon className="itunes" icon={faItunesNote} />
       </div>
       {fetching ? (
-        <> fecthing songs....</>
+        <> fecthing ........</>
       ) : (
         <div className="top-Songs">
           {searchResultCount.length >= 1 ? (

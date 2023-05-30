@@ -5,10 +5,21 @@ import "./style.css";
 const ItemDetails = () => {
   const { state } = useLocation();
   const { image, name, artist, audio, desc, video } = state;
-  // const { size, elapsed, percentage, download, cancel, error, isInProgress } =
-  //   useDownloader();
-  // const fileUrl = audio;
-  // const fileName = `${name} - ${artist}.mp4`;
+
+  const downloadFile = (url) => {
+    fetch(url)
+      .then((res) => res.blob())
+      .then((blob) => {
+        const blobUrl = window.URL.createObjectURL(new Blob([blob]));
+        const fileName = `${name} - ${artist}.mp3`;
+        const aTag = document.createElement("a");
+        aTag.href = blobUrl;
+        aTag.setAttribute("download", fileName);
+        document.body.appendChild(aTag);
+        aTag.click();
+        aTag.remove();
+      });
+  };
   console.log(state);
   return (
     <section className="details-section">
@@ -25,7 +36,7 @@ const ItemDetails = () => {
       </div>
       <div>
         <audio controls src={audio}></audio>
-        <button>Download</button>
+        <button onClick={() => downloadFile(audio)}>Download</button>
 
         <p>{name}</p>
         <p>{artist}</p>

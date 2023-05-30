@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.pagination ul li a {
+.pagination ul li button {
   background: #f3c203;
   padding: 5px 30px;
   color: snow;
@@ -17,10 +17,9 @@
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   font-size: 1.2rem;
 }
-
-.pagination ul li a:hover {
-  background: rgb(0, 38, 62);
+.disable {
+  background-color: gray;
 }
-.disable{
-  background: grey;
+.pagination ul li button:hover {
+  background: rgb(0, 38, 62);
 }

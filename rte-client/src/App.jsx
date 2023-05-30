@@ -9,6 +9,7 @@ import Songs from "./components/pages/songs/Songs";
 import Videos from "./components/pages/videos/Videos";
 import News from "./components/pages/news/News";
 import "./App.css";
+import Footer from "./components/partials/Footer";
 //import { getMusic } from "./API/axios";
 import AlbumDetail from "./components/pages/albumDetails/AlbumDetail";
 import NewsBody from "./components/pages/newsDescription/NewsBody";
@@ -38,6 +39,7 @@ function App() {
         <Route path="/newsBody" element={<NewsBody />} />
         <Route path="/album" element={<AlbumDetail />} />
       </Routes>
+      <Footer />
     </>
   );
 }
