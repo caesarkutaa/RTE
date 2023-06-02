@@ -9,11 +9,11 @@ WORKDIR /app
 # install app dependencies
 COPY ./package.json ./
 
-RUN npm install 
+RUN  npm install --force 
 
 
 # add app
 COPY . .
 
 # start app
-CMD ["npm","run", "start"]
+CMD ["npm", "run", "dev"]
