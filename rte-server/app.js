@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json());
 
-const whitelist = ["http://localhost:5173", "http://127.0.0.1:5173"];
+const whitelist = ["https://righttimesentertainment.com/", "https://righttimesentertainment.com/"];
 
 app.use(
   cors({
