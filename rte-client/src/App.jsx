@@ -32,7 +32,7 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/albums" element={<Albums />} />
         <Route element={<RequireAuth />}>
-          <Route path="admin" element={<Admin />} />
+          <Route path="/admin" element={<Admin />} />
         </Route>
         <Route path="/song" element={<ItemDetails />} />
         <Route path="/video" element={<YoutubeEmbed />} />
