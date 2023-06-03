@@ -44,7 +44,7 @@ app.use("/news", newRouter);
 app.use("/stats", statsRouter);
 app.use("/album", albumRouter);
 
-app.get('/*', function (req, res) {
+app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
