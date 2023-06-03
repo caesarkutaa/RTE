@@ -29,7 +29,6 @@ const Carousel = () => {
     axios
       .get("/song/")
       .then((res) => {
-        //console.log(res.data.songs);
         setAllSongs(res.data.songs);
         setFetching(false);
       })
@@ -48,18 +47,6 @@ const Carousel = () => {
             <img src={song.image.url} alt="" />
           </div>
         ))}
-        {/* <div>
-          <img src={logo} alt="" />
-        </div>
-        <div>
-          <img src={logo} alt="" />
-        </div>
-        <div>
-          <img src={logo} alt="" />
-        </div>
-        <div>
-          <img src={logo} alt="" />
-        </div> */}
       </Slider>
     </div>
   );

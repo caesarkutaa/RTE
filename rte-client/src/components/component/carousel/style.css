@@ -1,13 +1,13 @@
 .reactSlick {
-  width: 80%;
+  width: 60%;
   margin: auto;
   margin-top: 20px;
   text-align: center;
   height: fit-content;
-  z-index: -100;
+  z-index: -1;
 }
 .reactSlick .slide {
-  z-index: 0;
+  position: static;
 }
 .reactSlick .slide img {
   width: 100%;
