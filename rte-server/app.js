@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json());
 
-const whitelist = ["https://righttimesentertainment.com/", "https://righttimesentertainment.com/"];
+const whitelist = ["https://righttimesentertainment.com/", "http://righttimesentertainment.com/", "www.righttimesentertainment.com"];
 
 app.use(
   cors({
