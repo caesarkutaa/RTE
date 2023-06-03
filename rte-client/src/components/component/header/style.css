@@ -37,11 +37,11 @@ header nav .logo {
   gap: 5px;
 }
 header nav .logo img {
-  width: 8%;
+  width: 10%;
+  height: 8vh;
   margin: 3px 0;
   border-radius: 20%;
   margin-left: 15px;
-  z-index: 1;
 }
 header nav .logo h1 {
   margin: auto 0;
@@ -71,8 +71,8 @@ nav .navs ul li {
     margin: auto 0;
     z-index: 3;
   }
-  nav .logo img {
-    width: 10%;
+  header nav .logo img {
+    width: 25%;
   }
   .hamburger-btn .line {
     display: block;
@@ -121,10 +121,6 @@ nav .navs ul li {
 @media screen and (max-width: 650px) {
   nav .navs {
     width: 50%;
-  }
-  nav .logo img {
-    width: 15%;
-    border-radius: 20%;
   }
 }
 /* @media screen and (max-width: 310px) {
