@@ -25,7 +25,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/songs" element={<Songs setMusic={setMusic} />} />
         <Route path="/videos" element={<Videos />} />
