@@ -17,9 +17,7 @@ app.use(express.json());
 const whitelist = ["https://righttimesentertainment.com/", "http://righttimesentertainment.com/", "www.righttimesentertainment.com"];
 
 app.use(
-  cors({
-    origin: whitelist,
-  })
+  cors()
 );
 app.use(
   expressfileuploader({
