@@ -3,7 +3,7 @@
   margin: auto;
   margin-top: 20px;
   text-align: center;
-  height: fit-content;
+  height: 300px;
   z-index: -1;
 }
 .reactSlick .slide {
@@ -14,5 +14,6 @@
   margin: auto;
   height: 30vh;
   border-radius: 20px;
+  height: 300px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
