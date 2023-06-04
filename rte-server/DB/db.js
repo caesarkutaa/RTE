@@ -3,11 +3,10 @@ require("dotenv").config();
 
 mongoose.set("strictQuery", false);
 
-const connect = (url) => {
+const connect = () => {
   mongoose.connect(process.env.MONGO_URL);
   mongoose.connection.on("connected", () => {
     console.log("Connected to MongoDB Successfully");
-    console.log(url);
   });
 
   mongoose.connection.on("error", (err) => {
