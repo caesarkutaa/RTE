@@ -11,7 +11,7 @@ const getAllsongs = async(req,res)=>{
     const skip = (pageNumber - 1) * pageSize;
 
 try {
- const songs = await Song.find().sort({  timestamps: -1 })  ;
+ const songs = await Song.find().sort({ field: 'asc', _id: -1 }) ;
 
  res.status(200).json({songs,count:songs.length});  
 } catch (error) {
