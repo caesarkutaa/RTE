@@ -68,7 +68,7 @@ const createAlbum = async (req, res) => {
 
 // get all album
 const getAllalbum = async (req, res) => {
-  const album = await Album.find().sort({  timestamps: 1 }) ;
+  const album = await Album.find().sort({ field: 'asc', _id: -1 });
   res.status(200).json({ album, count: album.length });
 };
 

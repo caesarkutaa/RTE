@@ -138,7 +138,7 @@ const getAllsongsWithvideo = async(req,res)=>{
 
 
     try {
-        const songWithvideos = await Song.find({songsvideo:{$ne: '' } }).sort({  timestamps: 1 }) 
+        const songWithvideos = await Song.find({songsvideo:{$ne: '' } }).sort({ field: 'asc', _id: -1 })
         res.status(200).json(songWithvideos);
     } catch (error) {
         res.status(400).json('Error: ' + error);
