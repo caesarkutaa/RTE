@@ -75,6 +75,7 @@ const Songs = () => {
           />
         </label>
         <label className="shadow-blue-100 mt-6 block rounded-full border bg-white px-4 py-4 font-normal text-blue-500 shadow hover:bg-blue-50">
+          <p>song image</p>
           <input
             className=""
             type="file"
@@ -117,6 +118,7 @@ const Songs = () => {
           />
         </label>
         <label className="shadow-blue-100 mt-6 block rounded-full border bg-white px-4 py-4 font-normal text-blue-500 shadow hover:bg-blue-50">
+          <p>song audio</p>
           <input
             className=""
             type="file"

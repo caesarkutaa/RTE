@@ -85,7 +85,7 @@ const deleteNewsById = async (req, res) => {
 
 //get all news
 const getAllNews = async (req, res) => {
-    const Allnews = await News.find()
+    const Allnews = await News.find().sort({ field: 'asc', _id: -1 })
         if(!Allnews){
            return res.status(400).json({msg:' no news found'})
         }else{
