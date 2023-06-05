@@ -56,11 +56,12 @@ header nav .logo h1 {
 nav .navs ul li {
   display: inline-block;
   padding: 10px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
+
 .navs .activate {
   color: #f3c203;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 .hamburger-btn {
   display: none;

@@ -37,7 +37,7 @@ const ItemDetails = () => {
       <div>
         <audio controls src={audio}></audio>
         <button onClick={() => downloadFile(audio)}>Download</button>
-
+        <img src={image} alt="image" />
         <p>{name}</p>
         <p>{artist}</p>
         <p className="description">{desc}</p>

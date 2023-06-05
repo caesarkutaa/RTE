@@ -13,7 +13,7 @@ const Songs = () => {
   const [allSongs, setAllSongs] = useState([]);
   const [searchedSongs, setSearchedSongs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(3);
+  const [itemsPerPage] = useState(9);
   //let searchResult;
   useEffect(() => {
     getSongs();

@@ -12,7 +12,7 @@ const News = () => {
   const [allNews, setAllNews] = useState([]);
   const [searchedNews, setSearchedNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(3);
+  const [itemsPerPage] = useState(6);
 
   useEffect(() => {
     getNews();

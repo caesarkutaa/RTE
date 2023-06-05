@@ -1,6 +1,6 @@
 .details-section {
-  width: 90%;
-  margin: 0 30px;
+  width: 100%;
+  padding: 5px;
   margin-top: 100px;
   display: grid;
   gap: 10px;
@@ -8,7 +8,7 @@
 .details-section p {
   color: rgb(0, 38, 62);
   font-size: 1.5rem;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 .details-section audio {
@@ -16,8 +16,9 @@
   margin-bottom: 30px;
 }
 .details-section img {
-  width: 80%;
+  width: 90%;
   margin: auto;
+  margin-top: 20px;
 }
 .details-section button {
   background: rgb(0, 38, 62);
@@ -32,7 +33,10 @@
   transition: all 2s ease-in-out;
 }
 .details-section iframe {
-  height: 55vh;
+  left: 0;
+  top: 0;
+  margin: auto;
+  height: 45vh;
   width: 100%;
 }
 
