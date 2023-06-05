@@ -40,7 +40,7 @@ header nav .logo {
   gap: 5px;
 }
 header nav .logo img {
-  width: 8%;
+  width: 15%;
   margin: 3px 0;
   border-radius: 10px;
   margin-left: 15px;
@@ -73,9 +73,6 @@ nav .navs ul li {
     cursor: pointer;
     margin: auto 0;
     z-index: 3;
-  }
-  nav .logo img {
-    width: 18%;
   }
   .hamburger-btn .line {
     display: block;
@@ -124,9 +121,5 @@ nav .navs ul li {
 @media screen and (max-width: 650px) {
   nav .navs {
     width: 50%;
-  }
-  nav .logo img {
-    width: 15%;
-    border-radius: 20%;
   }
 }
