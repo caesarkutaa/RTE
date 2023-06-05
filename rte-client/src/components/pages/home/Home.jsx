@@ -113,23 +113,23 @@ const Home = () => {
         <nav className="latest-nav">
           <ul>
             <li>
-              <a href="#songs">
+              <a href="/#/#songs">
                 Latest <FontAwesomeIcon className="icon" icon={faItunesNote} />
               </a>
             </li>
             <li>
-              <a href="#videos">
+              <a href="/#/#videos">
                 latest <FontAwesomeIcon className="icon" icon={faYoutube} />
               </a>
             </li>
             <li>
-              <a href="#news">
+              <a href="/#/#news">
                 latest <FontAwesomeIcon className="icon" icon={faNewspaper} />
               </a>
             </li>
           </ul>
         </nav>
-          <Carousel />        
+        <Carousel />
         <TopSongs
           searchResultCount={searchResultCount}
           searchedSongs={searchedSongs}

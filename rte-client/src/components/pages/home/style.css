@@ -1,6 +1,7 @@
 .Home {
   text-transform: capitalize;
   background: #b0c0bc;
+  width: 100%;
   z-index: 1;
 }
 .latest-nav {
