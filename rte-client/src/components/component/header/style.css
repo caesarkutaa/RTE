@@ -28,6 +28,7 @@ header nav {
   height: 9vh !important;
   background: rgba(0, 38, 62, 0.5);
   box-shadow: 0px 3px 3px #314a5a;
+  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   display: grid;
   grid-template-columns: 1fr 1fr;
