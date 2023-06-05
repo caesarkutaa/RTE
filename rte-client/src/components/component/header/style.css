@@ -1,3 +1,9 @@
+header {
+  background: rgb(0, 38, 62);
+  padding: 0.1px;
+  position: relative;
+  z-index: 2;
+}
 .search {
   margin-top: 80px;
   margin-bottom: 15px;
@@ -10,7 +16,6 @@
   padding: 10px;
   border: 2px solid rgb(49, 74, 90);
   border-radius: 15px;
-
   background: snow;
 }
 .search .search-icon {
@@ -22,9 +27,7 @@
 header nav {
   position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  height: fit-content;
   background: rgba(0, 38, 62, 0.5);
   box-shadow: 0px 3px 3px #314a5a;
   backdrop-filter: blur(15px);
@@ -37,11 +40,11 @@ header nav .logo {
   gap: 5px;
 }
 header nav .logo img {
-  width: 10%;
-  height: 8vh;
+  width: 8%;
   margin: 3px 0;
   border-radius: 10px;
   margin-left: 15px;
+  z-index: 1;
 }
 header nav .logo h1 {
   margin: auto 0;
@@ -71,8 +74,8 @@ nav .navs ul li {
     margin: auto 0;
     z-index: 3;
   }
-  header nav .logo img {
-    width: 25%;
+  nav .logo img {
+    width: 18%;
   }
   .hamburger-btn .line {
     display: block;
@@ -122,5 +125,8 @@ nav .navs ul li {
   nav .navs {
     width: 50%;
   }
+  nav .logo img {
+    width: 15%;
+    border-radius: 20%;
+  }
 }
-

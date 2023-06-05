@@ -19,7 +19,7 @@ const Header = () => {
       <nav>
         <div className="logo">
           <img src={logo} alt="logo" />
-          <h1>Right Time Entertainment</h1>
+          <h1>Right Times Entertainments</h1>
         </div>
         <div className={`${open ? "navs open" : "navs"}`}>
           <ul>

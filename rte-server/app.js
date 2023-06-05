@@ -2,6 +2,7 @@
 
 const express = require("express");
 const cors = require("cors");
+//const path = require('path');
 const expressfileuploader = require("express-fileupload");
 const app = express();
 const bodyParser = require("body-parser");
@@ -13,13 +14,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 app.use(express.json());
+//app.use(express.static(path.join(__dirname, 'dist')));
 
-const whitelist = ["http://localhost:5173", "http://127.0.0.1:5173"];
+const whitelist = ["https://righttimesentertainment.com/", "http://righttimesentertainment.com/", "www.righttimesentertainment.com"];
 
 app.use(
-  cors({
-    origin: whitelist,
-  })
+  cors()
 );
 app.use(
   expressfileuploader({
@@ -44,6 +44,10 @@ app.use("/news", newRouter);
 app.use("/stats", statsRouter);
 app.use("/album", albumRouter);
 
+// app.get('*', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+// });
+
 app.use(function (req, res) {
   res.status(404).send({ url: req.originalUrl + " not found" });
 });
@@ -58,5 +62,4 @@ app.use((err, req, res, next) => {
 
 app.listen(port, (req, res, next) => {
   console.log(`server running on port ${port}`);
-  console.log("");
 });

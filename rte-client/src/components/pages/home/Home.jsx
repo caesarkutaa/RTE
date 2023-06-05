@@ -36,7 +36,6 @@ const Home = () => {
     axios
       .get("/song/")
       .then((res) => {
-        //console.log(res.data.songs);
         setMusic(res.data.songs);
         setSearchedSongs(res.data.songs);
         setFetching(false);
@@ -130,7 +129,7 @@ const Home = () => {
             </li>
           </ul>
         </nav>
-        <Carousel />
+          <Carousel />        
         <TopSongs
           searchResultCount={searchResultCount}
           searchedSongs={searchedSongs}

@@ -25,14 +25,14 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/songs" element={<Songs setMusic={setMusic} />} />
         <Route path="/videos" element={<Videos />} />
         <Route path="/news" element={<News />} />
         <Route path="/albums" element={<Albums />} />
         <Route element={<RequireAuth />}>
-          <Route path="admin" element={<Admin />} />
+          <Route path="/admin" element={<Admin />} />
         </Route>
         <Route path="/song" element={<ItemDetails />} />
         <Route path="/video" element={<YoutubeEmbed />} />
