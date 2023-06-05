@@ -1,5 +1,5 @@
 .news-section {
-  width: 98%;
+  width: 100%;
   margin: auto;
 }
 .news-section .latest-news {
@@ -8,7 +8,7 @@
 }
 .latest-news h1 {
   color: #0830c9;
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin: 10px 20px;
 }
 .latest-news .newspaper {
@@ -24,7 +24,7 @@
 }
 .top-news .container {
   background: darkslategray;
-  width: 100%;
+  width: 95%;
   height: max-content;
   cursor: pointer;
   /* padding: 10px; */

@@ -12,7 +12,7 @@ const Videos = () => {
   const [searchedVideos, setSearchedVideos] = useState([]);
   const [fetching, setFetching] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(3);
+  const [itemsPerPage] = useState(9);
 
   let searchResult;
   useEffect(() => {

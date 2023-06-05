@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import "./style.css";
 const YoutubeEmbed = () => {
   const { state } = useLocation();
-  const { songsVideo, name, artist, audio, desc, video } = state;
+  const { songsVideo, name, artist, audio, desc } = state;
   return (
     <div className="embed-youtube">
       <h1>
@@ -13,7 +13,7 @@ const YoutubeEmbed = () => {
       <iframe
         width=" 853"
         height="500"
-        src={`https://www.youtube.com/embed/${video}`}
+        src={`https://www.youtube.com/embed/${songsVideo}`}
         allowFullScreen
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         title="Embedded Youtube"
