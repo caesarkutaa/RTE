@@ -1,8 +1,6 @@
 header {
   background: rgb(0, 38, 62);
   padding: 0.1px;
-  position: relative;
-  z-index: 2;
 }
 .search {
   margin-top: 80px;
@@ -27,13 +25,14 @@ header {
 header nav {
   position: fixed;
   width: 100%;
-  height: fit-content;
+  height: 9vh !important;
   background: rgba(0, 38, 62, 0.5);
   box-shadow: 0px 3px 3px #314a5a;
   backdrop-filter: blur(15px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   color: snow;
+  z-index: 1;
 }
 header nav .logo {
   display: flex;
@@ -53,12 +52,9 @@ header nav .logo h1 {
   color: snow;
   font-weight: 650;
 }
-header nav .navs {
-  margin: auto 0;
-}
 nav .navs ul li {
   display: inline-block;
-  padding: 0 10px;
+  padding: 10px;
   font-size: 1.1rem;
 }
 .navs .activate {
@@ -72,7 +68,8 @@ nav .navs ul li {
   .hamburger-btn {
     display: block;
     cursor: pointer;
-    margin: auto 0;
+    padding: 15px 0;
+    /* margin: auto 0; */
     z-index: 3;
   }
   .hamburger-btn .line {
@@ -95,11 +92,11 @@ nav .navs ul li {
   }
   nav .navs {
     display: block;
-    position: fixed;
+    position: absolute;
     top: 0%;
     right: 100%;
     text-align: center;
-    width: 30%;
+    width: 60%;
     z-index: 2;
     background-color: snow;
     color: #314a5a;
@@ -124,9 +121,9 @@ nav .navs ul li {
   }
 }
 @media screen and (max-width: 650px) {
-  nav .navs {
+  /* nav .navs {
     width: 50%;
-  }
+  } */
   header nav .logo img {
     width: 25%;
     height: 8vh;
