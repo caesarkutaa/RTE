@@ -13,6 +13,7 @@ const Carousel = () => {
   var settings = {
     dots: true,
     speed: 500,
+    arrows: false,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
