@@ -20,6 +20,9 @@ const Home = () => {
   const [searchedSongs, setSearchedSongs] = useState([]);
   const [searchedVideos, setSearchedVideos] = useState([]);
   const [fetching, setFetching] = useState(true);
+  const [latestS, setLatestS] = useState(true);
+  const [latestV, setLatestV] = useState(false);
+  const [latestN, setLatestN] = useState(false);
 
   useEffect(() => {
     getNews();
@@ -113,38 +116,104 @@ const Home = () => {
         <nav className="latest-nav">
           <ul>
             <li>
-              <a href="/#/#songs">
+              <small
+                onClick={() => {
+                  setLatestS(true);
+                  setLatestV(false);
+                  setLatestN(false);
+                }}
+              >
                 Latest <FontAwesomeIcon className="icon" icon={faItunesNote} />
-              </a>
+              </small>
             </li>
             <li>
-              <a href="/#/#videos">
+              <small
+                onClick={() => {
+                  setLatestS(false);
+                  setLatestV(true);
+                  setLatestN(false);
+                }}
+              >
                 latest <FontAwesomeIcon className="icon" icon={faYoutube} />
-              </a>
+              </small>
             </li>
             <li>
-              <a href="/#/#news">
+              <small
+                onClick={() => {
+                  setLatestN(true);
+                  setLatestV(false);
+                  setLatestS(false);
+                }}
+              >
                 latest <FontAwesomeIcon className="icon" icon={faNewspaper} />
-              </a>
+              </small>
             </li>
           </ul>
         </nav>
         <Carousel />
-        <TopSongs
-          searchResultCount={searchResultCount}
-          searchedSongs={searchedSongs}
-          fetching={fetching}
-        />
-        <TopVideos
-          searchResultCount={searchResultCount}
-          searchedVideos={searchedVideos}
-          fetching={fetching}
-        />
-        <TopNews
-          searchResultCount={searchResultCount}
-          searchedNews={searchedNews}
-          fetching={fetching}
-        />
+        {latestV ? (
+          <>
+            <TopVideos
+              searchResultCount={searchResultCount}
+              searchedVideos={searchedVideos}
+              fetching={fetching}
+            />
+            <TopSongs
+              searchResultCount={searchResultCount}
+              searchedSongs={searchedSongs}
+              fetching={fetching}
+            />
+            <TopNews
+              searchResultCount={searchResultCount}
+              searchedNews={searchedNews}
+              fetching={fetching}
+            />
+          </>
+        ) : (
+          <></>
+        )}
+        {latestS ? (
+          <>
+            <TopSongs
+              searchResultCount={searchResultCount}
+              searchedSongs={searchedSongs}
+              fetching={fetching}
+            />
+            <TopVideos
+              searchResultCount={searchResultCount}
+              searchedVideos={searchedVideos}
+              fetching={fetching}
+            />
+            <TopNews
+              searchResultCount={searchResultCount}
+              searchedNews={searchedNews}
+              fetching={fetching}
+            />
+          </>
+        ) : (
+          <></>
+        )}
+        {latestN ? (
+          <>
+            <TopNews
+              searchResultCount={searchResultCount}
+              searchedNews={searchedNews}
+              fetching={fetching}
+            />
+            <TopSongs
+              searchResultCount={searchResultCount}
+              searchedSongs={searchedSongs}
+              fetching={fetching}
+            />
+            <TopVideos
+              searchResultCount={searchResultCount}
+              searchedVideos={searchedVideos}
+              fetching={fetching}
+            />
+          </>
+        ) : (
+          <></>
+        )}
       </main>
     </>
   );

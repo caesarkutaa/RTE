@@ -4,7 +4,7 @@
   width: 100%;
   z-index: 1;
 }
-.latest-nav {
+.Home .latest-nav {
   width: 100%;
   text-align: center;
   background-color: rgb(49, 74, 90);
@@ -21,9 +21,11 @@
   padding: 0 20px;
 }
 
-.latest-nav ul li a {
+.latest-nav ul li small {
   color: snow;
-  word-spacing: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  word-spacing: 0.4rem;
 }
 .icon {
   color: #f3c203;
