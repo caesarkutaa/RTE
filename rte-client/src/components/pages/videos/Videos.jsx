@@ -47,18 +47,20 @@ const Videos = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = searchedVideos.slice(indexOfFirstItem, indexOfLastItem);
   const nPages = Math.ceil(searchedVideos.length / itemsPerPage);
-  const handleClick = (songsVideo, name, artist, desc, audio) => {
+
+  console.log(musicVideos);
+  const handleClick = (img, name, artist, audio, desc, video) => {
     navigate("/video", {
       state: {
-        songsvideo: songsVideo,
+        image: img,
         name: name,
         artist: artist,
-        desc: desc,
         audio: audio,
+        desc: desc,
+        video: video,
       },
     });
   };
-  console.log(musicVideos);
   return (
     <>
       <SearchBar handleSearch={handleSearch} />
@@ -76,11 +78,12 @@ const Videos = () => {
                 key={videos.id}
                 onClick={() => {
                   handleClick(
-                    videos.songsVideo,
+                    videos.image.url,
                     videos.songname,
                     videos.artist,
+                    videos.audio.url,
                     videos.desc,
-                    videos.audio.url
+                    videos.songsvideo
                   );
                 }}
                 className="container"

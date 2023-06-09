@@ -56,9 +56,9 @@ const TopSongs = ({ searchResultCount, searchedSongs, fetching }) => {
             </>
           ) : (
             <>
-              {searchedSongs.slice(0, 3).map((songs, id) => (
+              {searchedSongs.slice(0, 3).map((songs) => (
                 <div
-                  key={id}
+                  key={songs.id}
                   onClick={() => {
                     handleClick(
                       songs.image.url,

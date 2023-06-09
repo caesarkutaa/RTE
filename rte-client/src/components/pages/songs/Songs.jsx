@@ -78,9 +78,9 @@ const Songs = () => {
           <>fetching .........</>
         ) : (
           <div className="top-Songs">
-            {currentItems.map((songs, id) => (
+            {currentItems.map((songs) => (
               <div
-                key={id}
+                key={songs.id}
                 onClick={() => {
                   handleClick(
                     songs.image.url,

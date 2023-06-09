@@ -6,14 +6,15 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const TopVideos = ({ searchedVideos, searchResultCount, fetching }) => {
   const navigate = useNavigate();
-  const handleClick = (songsVideo, name, artist, desc, audio) => {
+  const handleClick = (img, name, artist, audio, desc, video) => {
     navigate("/video", {
       state: {
-        songsvideo: songsVideo,
+        image: img,
         name: name,
         artist: artist,
-        desc: desc,
         audio: audio,
+        desc: desc,
+        video: video,
       },
     });
   };
@@ -34,11 +35,12 @@ const TopVideos = ({ searchedVideos, searchResultCount, fetching }) => {
                   key={videos.id}
                   onClick={() => {
                     handleClick(
-                      videos.songsVideo,
+                      videos.image.url,
                       videos.songname,
                       videos.artist,
+                      videos.audio.url,
                       videos.desc,
-                      videos.audio.url
+                      videos.songsvideo
                     );
                   }}
                   className="container"
@@ -51,16 +53,17 @@ const TopVideos = ({ searchedVideos, searchResultCount, fetching }) => {
             </>
           ) : (
             <>
-              {searchedVideos.slice(0, 3).map((videos, id) => (
+              {searchedVideos.slice(0, 3).map((videos) => (
                 <div
-                  key={id}
+                  key={videos.id}
                   onClick={() => {
                     handleClick(
-                      videos.songsVideo,
+                      videos.image.url,
                       videos.songname,
                       videos.artist,
+                      videos.audio.url,
                       videos.desc,
-                      videos.audio.url
+                      videos.songsvideo
                     );
                   }}
                   className="container"
