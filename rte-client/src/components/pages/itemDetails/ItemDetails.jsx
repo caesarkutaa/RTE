@@ -5,7 +5,7 @@ import "./style.css";
 const ItemDetails = () => {
   const { state } = useLocation();
   const { image, name, artist, audio, desc, video } = state;
-
+  console.log(state);
   const downloadFile = (url) => {
     fetch(url)
       .then((res) => res.blob())

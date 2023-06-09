@@ -109,6 +109,7 @@ const Home = () => {
       searchResultCount = 0;
     }
   };
+  console.log(musicVideos);
   return (
     <>
       <SearchBar handleSearch={handleSearch} />
