@@ -5,6 +5,12 @@
   text-align: center;
   z-index: -1;
 }
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .reactSlick {
+    width: 55%;
+  }
+}
 .reactSlick .slide img {
   width: 100%;
   margin: auto;
