@@ -62,7 +62,7 @@ form textarea {
   margin-bottom: 30px;
 }
 
-form button {
+.email-btn{
   display: block;
   padding: 10px 30px;
   background-color: snow !important;

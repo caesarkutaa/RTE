@@ -120,23 +120,10 @@ const Footer = () => {
                     cols="30"
                     rows="10"
                   ></textarea>
-                  <button type="submit">Send Message</button>
+                  <button className="email-btn" type="submit">Send Message</button>
                 </form>
               </>
             )}
-            <div class="flex flex-col">
-              <div class="mb-4">
-                Subscribe for NewsLetters
-                <input
-                  type="email"
-                  class="focus:outline mb-2 block h-14 w-full rounded-xl bg-gray-200 px-4 sm:w-80 focus:outline-none focus:ring-1 focus:ring-blue-600"
-                  placeholder="Enter your email"
-                />
-                <button class="block rounded-xl bg-blue-600 px-6 py-3 font-medium text-white">
-                  Subscribe
-                </button>
-              </div>
-            </div>
           </div>
         </div>
         <div class="bg-footer">
