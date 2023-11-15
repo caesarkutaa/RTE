@@ -1,12 +1,14 @@
 import { React, useRef, useState, useEffect } from 'react';
-import useAuth from '../../hooks/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import Cookies from "universal-cookie"
+import useAuth from '../hooks/useAuth';
 import '../css/login.css'
 import axios from '../API/axios';
 const LOGIN_URL = '/admin/login';
 
+const cookies = new Cookies()
 const Login = () => {
-    const { setAuth, persist, setPersist } = useAuth();
+    const { setAuth } = useAuth();
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -39,11 +41,13 @@ const Login = () => {
             );
             console.log(JSON.stringify(response?.data));            
             const Token = response?.data?.token;
-            console.log(JSON.stringify(Token));
-            localStorage.setItem('token', JSON.stringify(Token));
+            cookies.set('Token', Token, {
+                path: '/'
+            })
+            setAuth({email, password, Token})
             setEmail('');
             setPassword('');
-            navigate('/admin', { replace: true });
+            navigate(from, { replace: true });
         } catch (err) {
 
             
@@ -61,13 +65,7 @@ const Login = () => {
         }
     }
 
-    const togglePersist = () => {
-        setPersist(prev => !prev);
-    }
 
-    useEffect(() => {
-        localStorage.setItem("persist", persist);
-    }, [persist])
 
     return (
 

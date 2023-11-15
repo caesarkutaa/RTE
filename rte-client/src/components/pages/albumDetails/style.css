@@ -1,0 +1,17 @@
+.album h3 {
+  font-size: 1.8rem;
+  color: #f3c203;
+}
+.album h5 {
+  font-size: 1.2rem;
+  color: rgb(0, 38, 62);
+  margin-top: 20px;
+}
+.album p {
+  font-size: 1.2rem;
+}
+.album img {
+  height: 40vh;
+  width: 50% !important;
+  margin: 5px !important;
+}

@@ -1,0 +1,20 @@
+.reactSlick {
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  z-index: -1;
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .reactSlick {
+    width: 55%;
+  }
+}
+.reactSlick .slide img {
+  width: 100%;
+  margin: auto;
+  height: 45vh;
+  border-radius: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

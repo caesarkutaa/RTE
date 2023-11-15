@@ -1,43 +1,80 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html {
-    font-family: 'Nunito', sans-serif;
-    font-size: 22px;
-    color: #000;
+  font-family: "Nunito", sans-serif;
+  text-transform: capitalize;
+}
+.thank-you-meesage {
+  background: rgba(255, 255, 255, 0.158);
+  width: 80%;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 0px 7px 7px var(--black);
+  backdrop-filter: blur(15px);
+  margin-bottom: 20px;
+}
+.thank-you-meesage h5 {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+.thank-you-meesage p {
+  color: rgb(0, 38, 62);
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+.thank-you-meesage button {
+  background-color: snow;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0;
+  padding: 15px;
+  color: rgb(0, 38, 62);
+  transition: all 1s ease-in-out;
+  text-transform: capitalize;
+  border-radius: 10px;
 }
 
-body {
- 
-    background-color: dodgerblue;
+.thank-you-meesage button:hover {
+  background: rgb(0, 38, 62);
+  color: snow;
+  transition: all 1s ease-in-out;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
- 
-  padding: 1rem 0.5rem;
+form input {
+  display: block;
+  width: 80%;
+  background: snow;
+  outline: none;
+  height: 6vh;
+  color: rgb(0, 38, 62);
+  padding: 15px;
+  border: 2px solid rgb(0, 38, 62);
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
-
-
-  
-  main#dashboard-main::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  main#dashboard-main::-webkit-scrollbar-thumb {
-    border-radius: 9999px;
-    background-color: rgb(156 163 175 / 0.75);
-  }
-  main#dashboard-main::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgb(156 163 175 / 0.75);
-    border-radius: 10px;
-  }
- */
+form textarea {
+  display: block;
+  width: 80%;
+  padding: 15px;
+  height: 25vh;
+  color: rgb(0, 38, 62);
+  background-color: snow;
+  border: 2px solid rgb(0, 38, 62);
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.email-btn{
+  display: block;
+  padding: 10px 30px;
+  background-color: snow !important;
+  border: none;
+  font-size: 0.8rem;
+  color: rgb(0, 38, 62);
+  margin: auto;
+  border-radius: 10px;
+  transition: all 1s ease-in-out;
+  margin-bottom: 50px;
+}
+form button:hover {
+  background-color: rgb(0, 38, 62) !important;
+  color: snow;
+  transition: all 1s ease-in-out;
+}

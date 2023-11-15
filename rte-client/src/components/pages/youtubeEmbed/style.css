@@ -1,0 +1,20 @@
+.embed-youtube {
+  width: 95%;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+.embed-youtube h1 {
+  font-size: 1.5rem;
+  color: rgb(0, 38, 62);
+  margin: 20px 5px;
+}
+.embed-youtube p {
+  margin: 15px 5px;
+}
+.embed-youtube iframe {
+  left: 0;
+  top: 0;
+  height: 45vh;
+  width: 100%;
+}

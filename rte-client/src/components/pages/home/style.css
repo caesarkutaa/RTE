@@ -1,0 +1,36 @@
+.Home {
+  text-transform: capitalize;
+  background: #b0c0bc;
+  width: 100%;
+  z-index: 1;
+}
+.Home .latest-nav {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(49, 74, 90);
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+.description {
+  font-size: 1rem !important;
+  color: black !important;
+}
+.latest-nav ul li {
+  list-style: none;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0 20px;
+}
+
+.latest-nav ul li small {
+  color: snow;
+  font-size: 1rem;
+  cursor: pointer;
+  word-spacing: 0.4rem;
+}
+.icon {
+  color: #f3c203;
+  /* color: rgb(0, 38, 62); */
+}
+.latest-nav ul li a:hover {
+  color: #f3c203;
+}
